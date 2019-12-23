@@ -1,9 +1,14 @@
 import React from 'react';
 import { BUTTON_PROPS } from '../../../types';
+import styles from './Button.module.scss';
 import cn from 'classnames';
 
-const Button = ({ action, className = '', full = false, label = '', link = '', title = '', type = 'primary' }) => {
-  const buttonClass = cn('generic-button-component', className, type, full);
+const Button = ({ action, full=false, label='', link='', title='', type='primary' }) => {
+  const buttonClass = cn(styles.genericButtonComponent, {
+    [styles.full]: full,
+    [styles.primary]: type === 'primary',
+  });
+
   return (
     <div
       className={buttonClass}

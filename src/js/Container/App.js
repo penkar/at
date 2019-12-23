@@ -8,6 +8,8 @@ import {Slogan, RecentStories,} from '../Components/Functional'
 import * as actions from '../Actions/'
 import {getStories} from '../Utility';
 
+import styles from './App.module.scss';
+
 const mapActions = (dispatch) =>({
   dispatch,
   actions: {
@@ -43,7 +45,7 @@ class App extends React.Component {
       <div>
         { HeaderRow({actions, settings: settingsReducer}) }
         { TableOfContents(settingsReducer.tableofcontents) }
-        <div className={cn('app-body', {tableofcontents:settingsReducer.tableofcontents})}>
+        <div className={cn(styles.appBody, {[styles.tableofcontents]: settingsReducer.tableofcontents})}>
           <Slogan />
           { !hash && RecentStories(newsTaglineReducer) }
           { stories.length > 1 && HomePageBody(stories) }

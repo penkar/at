@@ -2,6 +2,8 @@ import React from 'react';
 import { string, array } from 'prop-types';
 import cn from 'classnames';
 
+import styles from './Content.module.scss';
+
 import {SubContent} from './SubContent';
 import {FaAngleRight} from 'react-icons/fa'
 
@@ -16,7 +18,7 @@ export default function Content ({ className, sublinks, link, label, key }) {
         { Boolean(sublinks.length) && <FaAngleRight style={{fontSize: '1.5em'}}/> }
       </span>
       { Boolean(sublinks.length) &&
-        <div className={cn('subcontents-component thin-shadow')}>
+        <div className={cn('subcontents-component', styles.thinShadow)}>
           { sublinks.map((sub) => <SubContent {...sub} />) }
         </div>
       }

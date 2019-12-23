@@ -11,7 +11,7 @@ export const TableOfContents = (open) => {
   const componentClass = cn({open},'table-of-contents-component');
   return (
     <div id='TableOfContents' className={componentClass}>
-      <Button label='Subscribe' className='content-component-button' type='primary' />
+      <Button label='Subscribe' type='primary' />
       <hr className='divider' />
       { MultiContent(MultiLink[0]) }
       { List.map((section) => (Content(section))) }

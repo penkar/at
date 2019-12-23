@@ -1,0 +1,21 @@
+.genericButtonComponent {
+  border-radius: 4px;
+  text-align: center;
+  padding: 8px 4px;
+  margin: 8px 4px;
+  font-size: small;
+
+  
+  &.primary {
+    color: white;
+    background-color: #1955a5;
+    
+    &:hover {
+      background-color: #3d73d5
+    }
+  }
+}
+
+.full {
+  width: calc(100% - 80px);
+}
