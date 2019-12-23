@@ -1,4 +1,6 @@
 import React from 'react';
+import cn from 'classnames';
+
 import { StoryTeaser } from './StoryTeaser';
 
 import styles from './HomePageBody.module.scss';
@@ -29,10 +31,10 @@ const HomePageBody = (stories) => {
 
   return (
     <div className={bodyClass}>
-      <div className={colClass}>
+      <div className={cn(colClass, styles.borderRight)}>
         {arr1}
       </div>
-      <div className={colClass}>
+      <div className={cn(colClass, styles.borderRight)}>
         {arr2}
       </div>
       <div className={colClass}>

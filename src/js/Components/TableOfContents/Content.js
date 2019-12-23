@@ -18,7 +18,7 @@ export default function Content ({ className, sublinks, link, label, key }) {
         { Boolean(sublinks.length) && <FaAngleRight style={{fontSize: '1.5em'}}/> }
       </span>
       { Boolean(sublinks.length) &&
-        <div className={cn('subcontents-component', styles.thinShadow)}>
+        <div className={cn(styles.subContent, styles.thinShadow)}>
           { sublinks.map((sub) => <SubContent {...sub} />) }
         </div>
       }

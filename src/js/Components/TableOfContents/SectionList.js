@@ -1,4 +1,4 @@
-const MultiLink = [{
+const MultiLink = {
   primary: {
     label:'Home Page',
     link:'home',
@@ -13,7 +13,7 @@ const MultiLink = [{
       key:'regional',
       link:'/usworld',
   }],
-}]
+}
 
 const List = [{
   label:'Politics',

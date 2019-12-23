@@ -1,4 +1,4 @@
-.thin-shadow {
+.thinShadow {
   -webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
@@ -13,18 +13,39 @@
 }
 
 .content {
-  padding: 6px 0px;
-  width: 238px;
-  margin-left: 42.5px;
+  align-items: center;
   color: white;
-  transition: padding 1s, background-color 2s, transform 2s;
-  position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   min-height: 1rem;
+  margin-left: 42.5px;
+  padding: 6px 0px;
+  position: relative;
+  transition: padding 1s, background-color 2s, transform 2s;
+  width: 238px;
+  
+  > div {
+    display: none;
+  }
+
   &:hover {
     background-color: black;
     padding-left: 24px;
+    >div {
+      display: flex;
+    }
   }
+}
+
+.subContent {
+  background-color: white;
+  display: flex;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  flex-direction: column;
+  left: 100%;
+  padding: 8px 16px;
+  position: absolute;
+  width: 250px;
+  z-index: 10000;
 }
