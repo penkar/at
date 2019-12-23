@@ -1,9 +1,11 @@
 import React from 'react';
 import { HEADER_LINK } from '../../types';
 
-export default function HeaderLink ({ title='', children=null, link='' }) {
+import styles from './HeaderLink.module.scss';
+
+export default function HeaderLink ({ className='', title='', children=null, link='' }) {
   return (
-    <li className='news-link-li'>
+    <li className={styles.li}>
       <a href={link}>
         { title }
         { children }

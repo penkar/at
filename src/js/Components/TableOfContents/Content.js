@@ -8,13 +8,13 @@ import {SubContent} from './SubContent';
 import {FaAngleRight} from 'react-icons/fa'
 
 export default function Content ({ className, sublinks, link, label, key }) {
-  const componentClass = cn('content-component', className);
+  const componentClass = cn(styles.content, className);
   return (
     <div className={componentClass} key={key}>
-      <span className='label'>
+      <span className={styles.label}>
         {label}
       </span>
-      <span className='right-arrow'>
+      <span className={styles.rightArrow}>
         { Boolean(sublinks.length) && <FaAngleRight style={{fontSize: '1.5em'}}/> }
       </span>
       { Boolean(sublinks.length) &&

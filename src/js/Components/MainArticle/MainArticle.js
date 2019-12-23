@@ -1,15 +1,18 @@
 import React from 'react';
 import { string, array } from 'prop-types';
-import StoryElement from '../HomePage/StoryElement';
 import cn from 'classnames';
 
+import styles from './MainArticle.module.scss';
+
+import StoryElement from '../HomePage/StoryElement';
+
 const MainArticle = ({ className, title, author, story = [] }) => {
-  const componentClass = cn('story-teaser-component', 'main-article-component', className);
+  const componentClass = cn(styles.teaser, className);
   return (
-    <div className='home-page-body'>
+    <div className={styles.body}>
       <div className={componentClass}>
-        { title && <div className='title'>{ title }</div> }
-        { author && <div className='author'>{ author.join(', ') }</div> }
+        { title && <div className={styles.title}>{ title }</div> }
+        { author && <div className={styles.author}>{ author.join(', ') }</div> }
 
         { story.map((str, j) => <StoryElement {...str} key={j} />) }
       </div>

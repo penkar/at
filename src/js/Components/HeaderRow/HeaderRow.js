@@ -1,35 +1,35 @@
-import React from 'react'
-import HeaderButton from './HeaderButton'
-import HeaderLink from './HeaderLink'
-import Links from './Links'
+import React from 'react';
+import { FaBars, FaBell, FaSearch } from 'react-icons/fa';
 
-import {FaBars, FaBell, FaSearch} from 'react-icons/fa'
+import HeaderButton from './HeaderButton';
+import HeaderLink from './HeaderLink';
+import Links from './Links';
+
+import styles from './HeaderRow.module.scss';
 
 const HeaderRow  = ({actions, settings}) => (
-  <div id='header-row'>
-    <ul className='news-link-ul'>
-
+  <div className={styles.headerRow}>
+    <ul className={styles.ul}>
       <HeaderButton
-        className={settings.searchSection ? 'search' : ''}
+        className={styles.searchIcon}
+        search={settings.searchSection}
         clickValue='searchSection'
         onClick={actions.changeSettingBool}
       >
-        <FaSearch className='standard-icon' />
+        <FaSearch className={styles.standardIcon} />
       </HeaderButton>
-
       <HeaderButton
         clickValue='tableofcontents'
         onClick={actions.changeSettingBool}
       >
         <span>Sections&nbsp;</span>
-        <FaBars className='standard-icon' />
+        <FaBars className={styles.standardIcon} />
       </HeaderButton>
       { Links.map((link) => <HeaderLink {...link} key={link.title} />) }
     </ul>
-
-    <ul className='news-link-ul'>
+    <ul className={styles.ul}>
       <HeaderLink>
-        <FaBell className='standard-icon'/>
+        <FaBell className={styles.standardIcon} />
       </HeaderLink>
     </ul>
   </div>

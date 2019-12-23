@@ -23,7 +23,7 @@ export const Slogan = ({title="Not the Washington Post"}) => (
         Edition: <a style={{color:'black'}} href='#'>Web</a>
       </span>
     </div>
-    <hr className='medium-divider'/>
+    <hr className={styles.mediumDivider} />
   </div>
 );
 

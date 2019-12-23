@@ -1,8 +1,12 @@
 .appBody {
-  -webkit-transition: left 2s, background-color 2s, -webkit-transform 2s;
-  transition: left 1s, background-color 2s, transform 2s;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   left: 4vw;
-
+  position: absolute;
+  text-align: center;
+  top: 68px;
+  width: 92vw;
 }
 
 .tableofcontents {

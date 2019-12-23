@@ -57,7 +57,7 @@ class App extends React.Component {
   }
 
   _relevantStories = () => {
-    let {newsStoryReducer} = this.props, {hash} = this.state;
+    const {newsStoryReducer} = this.props, {hash} = this.state;
     if(!hash) {
       return newsStoryReducer;
     } else if(parseInt(hash)) {
@@ -76,7 +76,7 @@ class App extends React.Component {
       if (target.id === 'TableOfContents' || target.id === 'header-row') {break;}
       target = target.parentElement;
     }
-    if(!target) return this.props.actions.changeSettingBool('tableofcontents');
+    // if(!target) return this.props.actions.changeSettingBool('tableofcontents');
   }
 }
 

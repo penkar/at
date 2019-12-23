@@ -1,0 +1,33 @@
+.contentComponent {
+  
+}
+
+.multiContent {
+  >a {
+    text-decoration: none;
+    color: white;
+    margin-left: 4px;
+    transition: margin-left 1s;
+  }
+
+  &:hover {
+    >a {
+      margin-left: 10px;
+    }
+  }
+
+  >a:first-child {
+    margin-left:0px;
+    &:hover {
+      margin-left: 0px;
+    }
+  }
+
+}
+.primary {
+  font-size: 16px;
+}
+
+.secondary {
+  font-size: 10px;
+}

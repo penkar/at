@@ -1,0 +1,11 @@
+.li {
+  margin-right: 8px;
+  a {
+    color: #d5d5d5;
+    font-size: 0.8rem;
+    text-decoration: none;
+    &:hover {
+      color: lighten(#d5d5d5, 20%);
+    }
+  }
+}

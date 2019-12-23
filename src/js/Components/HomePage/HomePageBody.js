@@ -1,5 +1,7 @@
 import React from 'react';
-import {StoryTeaser} from './StoryTeaser';
+import { StoryTeaser } from './StoryTeaser';
+
+import styles from './HomePageBody.module.scss';
 
 const HomePageBody = (stories) => {
   const arr1 = [], arr2 = [], arr3 = [];
@@ -22,8 +24,8 @@ const HomePageBody = (stories) => {
       arr3.push(StoryTeaser(item, i));
     }
   });
-  const bodyClass = 'home-page-body';
-  const colClass = 'home-page-body-col';
+  const bodyClass = styles.homePageBody;
+  const colClass = styles.homePageBodyCol;
 
   return (
     <div className={bodyClass}>

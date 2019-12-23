@@ -1,7 +1,9 @@
 import React from 'react';
-import { BUTTON_PROPS } from '../../../types';
-import styles from './Button.module.scss';
 import cn from 'classnames';
+
+import { BUTTON_PROPS } from '../../../types';
+
+import styles from './Button.module.scss';
 
 const Button = ({ action, full=false, label='', link='', title='', type='primary' }) => {
   const buttonClass = cn(styles.genericButtonComponent, {
@@ -21,4 +23,4 @@ const Button = ({ action, full=false, label='', link='', title='', type='primary
 
 Button.propTypes = BUTTON_PROPS;
 
-export {Button};
+export default Button;

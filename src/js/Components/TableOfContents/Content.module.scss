@@ -3,3 +3,28 @@
   -moz-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
 }
+
+.label {
+  font-size: 14px;
+}
+
+.rightArrow {
+  font-size: 14px;
+}
+
+.content {
+  padding: 6px 0px;
+  width: 238px;
+  margin-left: 42.5px;
+  color: white;
+  transition: padding 1s, background-color 2s, transform 2s;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 1rem;
+  &:hover {
+    background-color: black;
+    padding-left: 24px;
+  }
+}
