@@ -1,80 +1,47 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import { bindActionCreators } from 'redux';
+import React, { useState, useEffect, } from 'react'
 import cn from 'classnames'
 
-import {HeaderRow, TableOfContents, HomePageBody, MainArticle,} from '../Components/'
-import {Slogan, RecentStories,} from '../Components/Functional'
-import * as actions from '../Actions/'
-import {getStories} from '../Utility';
+import { HeaderRow, TableOfContents, HomePageBody, MainArticle, } from '../Components/'
+import { Slogan, RecentStories, } from '../Components/Functional'
+import ReactReducer from '../Reducers/reactReducer.js';
+import { getStories } from '../Utility';
 
 import styles from './App.module.scss';
 
-const mapActions = (dispatch) =>({
-  dispatch,
-  actions: {
-    changeSetting: bindActionCreators(actions.changeSetting, dispatch),
-    changeSettingBool: bindActionCreators(actions.changeSettingBool, dispatch),
-    setStoryAction: bindActionCreators(actions.setStoryAction, dispatch),
-    setStoryTags: bindActionCreators(actions.setStoryTags, dispatch),
-  },
-});
+export default function App () {
+  const {actions, settingsReducer, newsTaglineReducer, newsStoryReducer} = ReactReducer();
+  const [hash, changeHash] = useState(window.location.hash.replace(/^#/,''));
 
-class App extends React.Component {
-  state = {
-    hash: window.location.hash.replace(/^#/,'')
-  }
-
-  componentDidMount() {
-    let title = document.getElementsByTagName('title')[0];
+  useEffect(() => {
+    const title = document.getElementsByTagName('title')[0];
     title.innerText = `News of the Day ${(new Date()).toLocaleDateString()}`;
-    document.addEventListener('click', this._click);
-    getStories(this.props.actions);
-    window.onhashchange = this._body;
+    window.onhashchange = () => changeHash(window.location.hash.replace(/^#/,''));
+    getStories(actions);
+    // document.addEventListener('click', this._click);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  let stories = [];
+  if (!hash) {
+    stories = newsStoryReducer;
+  } else if (parseInt(hash)) {
+    stories = newsStoryReducer.filter((str) => (str.id === hash));
+  } else if (hash) {
+    stories = newsStoryReducer.filter((str) => (str.section === hash || str.subSection === hash));
   }
 
-  render() {
-    const {actions, settingsReducer, newsTaglineReducer} = this.props;
-    const {hash} = this.state;
-    const stories = this._relevantStories();
+  return (
+    <div>
+      <HeaderRow actions={actions} settings={settingsReducer} />
+      <TableOfContents open={settingsReducer.tableofcontents} />
+      <div className={cn(styles.appBody, {[styles.tableOfContents]: settingsReducer.tableofcontents})}>
+        <Slogan />
+        { !hash && RecentStories(newsTaglineReducer) }
+        { stories.length > 1 && HomePageBody(stories) }
 
-    return (
-      <div>
-        { HeaderRow({actions, settings: settingsReducer}) }
-        { TableOfContents(settingsReducer.tableofcontents) }
-        <div className={cn(styles.appBody, {[styles.tableOfContents]: settingsReducer.tableofcontents})}>
-          <Slogan />
-          { !hash && RecentStories(newsTaglineReducer) }
-          { stories.length > 1 && HomePageBody(stories) }
-
-          { stories.length === 1 && MainArticle(stories[0]) }
-        </div>
+        { stories.length === 1 && MainArticle(stories[0]) }
       </div>
-    )
-  }
-
-  _relevantStories = () => {
-    const {newsStoryReducer} = this.props, {hash} = this.state;
-    if(!hash) {
-      return newsStoryReducer;
-    } else if(parseInt(hash)) {
-      return newsStoryReducer.filter((str) => (str.id === hash));
-    } else if(hash) {
-      return newsStoryReducer.filter((str) => (str.section === hash || str.subSection === hash));
-    }
-    return [];
-  }
-
-  _body = () => this.setState({hash: window.location.hash.replace(/^#/,'')});
-
-  _click = ({target}) => {
-    if(!this.props.settingsReducer.tableofcontents) return null;
-    while(target) {
-      if (target.id === 'TableOfContents' || target.id === 'header-row') {break;}
-      target = target.parentElement;
-    }
-    // if(!target) return this.props.actions.changeSettingBool('tableofcontents');
-  }
+    </div>
+  );
 }
-
-export default connect(state => state, mapActions)(App)

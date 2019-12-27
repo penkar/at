@@ -9,7 +9,7 @@ import { List, MultiLink, } from './SectionList.js';
 
 import styles from './TableOfContents.module.scss'
 
-export const TableOfContents = (open) => {
+export const TableOfContents = ({open}) => {
   const componentClass = cn(styles.tableOfContentsComponent, {[styles.open]: open, [styles.closed]: !open});
 
   return (

@@ -13,7 +13,7 @@ const HeaderButton = ({
   children = null,
   title = ''
 }) => {
-  const onButtonClick = () => {console.log(111); onClick(clickValue);}
+  const onButtonClick = () => onClick(clickValue);
   const componentClass = cn(styles.newsButton, {[styles.search]: search});
 
   return (
