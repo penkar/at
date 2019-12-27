@@ -21,11 +21,8 @@ const mapActions = (dispatch) =>({
 });
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hash: window.location.hash.replace(/^#/,'')
-    };
+  state = {
+    hash: window.location.hash.replace(/^#/,'')
   }
 
   componentDidMount() {
@@ -45,7 +42,7 @@ class App extends React.Component {
       <div>
         { HeaderRow({actions, settings: settingsReducer}) }
         { TableOfContents(settingsReducer.tableofcontents) }
-        <div className={cn(styles.appBody, {[styles.tableofcontents]: settingsReducer.tableofcontents})}>
+        <div className={cn(styles.appBody, {[styles.tableOfContents]: settingsReducer.tableofcontents})}>
           <Slogan />
           { !hash && RecentStories(newsTaglineReducer) }
           { stories.length > 1 && HomePageBody(stories) }
@@ -78,10 +75,6 @@ class App extends React.Component {
     }
     // if(!target) return this.props.actions.changeSettingBool('tableofcontents');
   }
-}
-
-App.defaultProps = {
-  stories:[],
 }
 
 export default connect(state => state, mapActions)(App)

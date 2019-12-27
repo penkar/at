@@ -7,7 +7,7 @@
 }
 
 .title {
-  color: black;
+  color: #000000;
   font-family: serif;
   font-size: 2rem;
   font-style: italic;
@@ -20,10 +20,8 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
-
-  > * {
-    margin-bottom: 6px;
-    margin-top: 6px;
-    font-size: 12px;
-  }
+  margin-bottom: 6px;
+  margin-top: 6px;
+  font-size: 12px;
+  border-bottom: solid 1px #000000;
 }

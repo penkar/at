@@ -14,7 +14,7 @@
 
 .content {
   align-items: center;
-  color: white;
+  color: #ffffff;
   display: flex;
   justify-content: space-between;
   min-height: 1rem;
@@ -23,13 +23,13 @@
   position: relative;
   transition: padding 1s, background-color 2s, transform 2s;
   width: 238px;
-  
+
   > div {
     display: none;
   }
 
   &:hover {
-    background-color: black;
+    background-color: #000000;
     padding-left: 24px;
     >div {
       display: flex;
@@ -38,7 +38,7 @@
 }
 
 .subContent {
-  background-color: white;
+  background-color: #ffffff;
   display: flex;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -47,5 +47,5 @@
   padding: 8px 16px;
   position: absolute;
   width: 250px;
-  z-index: 10000;
+  // z-index: 10000;
 }
