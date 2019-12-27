@@ -7,10 +7,10 @@ import styles from './Content.module.scss';
 import {SubContent} from './SubContent';
 import {FaAngleRight} from 'react-icons/fa'
 
-export default function Content ({ className, sublinks, link, label, key }) {
+export default function Content ({ className, sublinks, link, label }) {
   const componentClass = cn(styles.content, className);
   return (
-    <div className={componentClass} key={key}>
+    <div className={componentClass}>
       <span className={styles.label}>
         {label}
       </span>
@@ -27,7 +27,6 @@ export default function Content ({ className, sublinks, link, label, key }) {
 }
 
 Content.propTypes = {
-  key: string,
   label: string,
   link: string,
   sublinks: array,

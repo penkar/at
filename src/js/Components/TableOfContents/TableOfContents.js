@@ -17,7 +17,7 @@ export const TableOfContents = ({open}) => {
       <Button label='Subscribe' type='primary' />
       <hr className={styles.divider} />
       <MultiContent {...MultiLink} />
-      { List.map((section) => <Content {...section} />) }
+      { List.map((section) => <Content {...section} key={section.label} />) }
       <hr className={styles.fullBreak} />
     </div>
   );
