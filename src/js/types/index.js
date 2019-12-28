@@ -1,5 +1,6 @@
 import PropTypes, {
   any,
+  array,
   arrayOf,
   bool,
   func,
@@ -37,6 +38,13 @@ export const BUTTON_PROPS = {
   link: string,
   title: string,
   type: string,
+}
+
+export const CONTENT = {
+  label: string,
+  link: string,
+  sublinks: array,
+  className: string,
 }
 
 export const HEADER_BUTTON_PROPS = {

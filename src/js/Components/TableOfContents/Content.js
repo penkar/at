@@ -1,19 +1,19 @@
 import React from 'react';
-import { string, array } from 'prop-types';
 import cn from 'classnames';
+import { FaAngleRight } from 'react-icons/fa'
 
 import styles from './Content.module.scss';
+import { SubContent } from './SubContent';
 
-import {SubContent} from './SubContent';
-import {FaAngleRight} from 'react-icons/fa'
+import { CONTENT } from './../../types/index.js';
+
 
 export default function Content ({ className, sublinks, link, label }) {
   const componentClass = cn(styles.content, className);
+
   return (
     <div className={componentClass}>
-      <span className={styles.label}>
-        {label}
-      </span>
+      <span className={styles.label}>{label}</span>
       <span className={styles.rightArrow}>
         { Boolean(sublinks.length) && <FaAngleRight style={{fontSize: '1.5em'}}/> }
       </span>
@@ -26,9 +26,4 @@ export default function Content ({ className, sublinks, link, label }) {
   );
 }
 
-Content.propTypes = {
-  label: string,
-  link: string,
-  sublinks: array,
-  className: string,
-}
+Content.propTypes = CONTENT;
