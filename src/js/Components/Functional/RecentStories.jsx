@@ -1,6 +1,6 @@
 import React from 'react';
-import { RECENT_STORIES } from '../../types';
 
+import { RECENT_STORIES } from '../../types';
 import styles from './RecentStories.module.scss';
 
 const RecentStories = (array = []) => (

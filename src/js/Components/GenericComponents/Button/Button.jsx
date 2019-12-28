@@ -2,7 +2,6 @@ import React from 'react';
 import cn from 'classnames';
 
 import { BUTTON_PROPS } from '../../../types';
-
 import styles from './Button.module.scss';
 
 const Button = ({ action, full=false, label='', link='', title='', type='primary' }) => {

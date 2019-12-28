@@ -4,7 +4,6 @@ import { FaAngleRight } from 'react-icons/fa'
 
 import { SubContent } from './SubContent';
 import { CONTENT } from '../../types/index.js';
-
 import styles from './Content.module.scss';
 
 export default function Content ({ className, sublinks, link, label }) {

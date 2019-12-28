@@ -5,7 +5,6 @@ import { HeaderRow, TableOfContents, HomePageBody, MainArticle, } from '../Compo
 import { Slogan, RecentStories, } from '../Components/Functional'
 import ReactReducer from '../Reducers/reactReducer.js';
 import { getStories } from '../Utility';
-
 import styles from './App.module.scss';
 
 export default function App () {

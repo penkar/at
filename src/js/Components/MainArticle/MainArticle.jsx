@@ -3,7 +3,6 @@ import cn from 'classnames';
 
 import { ARTICLE } from '../../types/index.js';
 import StoryElement from '../HomePage/StoryElement';
-
 import styles from './MainArticle.module.scss';
 
 const MainArticle = ({ className, title, author, story = [] }) => {

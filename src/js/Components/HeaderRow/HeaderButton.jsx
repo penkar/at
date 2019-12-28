@@ -2,7 +2,6 @@ import React from 'react';
 import cn from 'classnames';
 
 import { HEADER_BUTTON_PROPS } from '../../types';
-
 import styles from './HeaderButton.module.scss';
 
 const HeaderButton = ({

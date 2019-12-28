@@ -3,7 +3,6 @@ import cn from 'classnames';
 
 import { StoryTeaser } from './StoryTeaser.jsx';
 import { ARTICLES } from '../../types/index.js';
-
 import styles from './HomePageBody.module.scss';
 
 const HomePageBody = ({stories}) => {

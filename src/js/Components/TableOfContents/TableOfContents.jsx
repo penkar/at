@@ -6,7 +6,6 @@ import Content from './Content.jsx';
 import MultiContent from './MultiContent.jsx';
 import Button from '../GenericComponents/Button';
 import { List, MultiLink, } from './SectionList.js';
-
 import styles from './TableOfContents.module.scss'
 
 export const TableOfContents = ({open}) => {

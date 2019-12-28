@@ -3,7 +3,6 @@ import cn from 'classnames';
 
 import StoryElement from './StoryElement.jsx';
 import { ARTICLE } from '../../types/index.js';
-
 import styles from './StoryTeaser.module.scss';
 
 const StoryTeaser = ({story, className = '', author, title, id }) => (
@@ -16,6 +15,6 @@ const StoryTeaser = ({story, className = '', author, title, id }) => (
   </div>
 );
 
-StoryTeaser.propTypes = {...ARTICLE};
+StoryTeaser.propTypes = ARTICLE;
 
 export {StoryTeaser}

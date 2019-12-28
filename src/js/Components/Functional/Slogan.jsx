@@ -9,7 +9,7 @@ const date = new Date();
 
 export const Slogan = ({title="Not the Washington Post"}) => (
   <div>
-    <a href='#' className={styles.text}>
+    <a href='/' className={styles.text}>
       {title}
     </a>
     <div className={styles.rowText}>
@@ -20,7 +20,7 @@ export const Slogan = ({title="Not the Washington Post"}) => (
         Mold Dies in Daylight
       </span>
       <span className={cn(styles.column, styles.right)}>
-        Edition: <a style={{color:'black'}} href='#'>Web</a>
+        Edition: <a style={{color:'black'}} href='/#'>Web</a>
       </span>
     </div>
     <hr className={styles.mediumDivider} />
