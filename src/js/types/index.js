@@ -1,15 +1,21 @@
-import {
+import PropTypes, {
   any,
   arrayOf,
   bool,
   func,
-  shape,
   string,
   node,
   object,
 } from 'prop-types';
 
-export const ARTICLE = shape({
+export const PARAGRAPH = PropTypes.shape({
+  className: string,
+  style: object,
+  text: string,
+  type: string,
+})
+
+export const ARTICLE = PropTypes.shape({
   id: string,
   date: any,
   section: string,
@@ -18,11 +24,7 @@ export const ARTICLE = shape({
   author: arrayOf(string),
   header: string,
   subheader: string,
-  story: arrayOf(shape({
-    text: string,
-    className: string,
-    style: object
-  })),
+  story: arrayOf(PARAGRAPH),
 });
 
 export const ARTICLES = arrayOf(ARTICLE);
@@ -46,12 +48,12 @@ export const HEADER_BUTTON_PROPS = {
 }
 
 export const HEADER_LINK = {
-  href: string.isRequired,
-  title: string.isRequired,
+  href: string,
+  title: string,
   children: node,
 }
 
-export const HEADER_RECENT_STORY = shape({
+export const HEADER_RECENT_STORY = PropTypes.shape({
   title: string,
   href: string,
 });

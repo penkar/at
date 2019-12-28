@@ -1,5 +1,7 @@
-import React from 'react'
-import cn from 'classnames'
+import React from 'react';
+import cn from 'classnames';
+
+import { PARAGRAPH } from '../../types/index.js';
 
 const StoryElement = ({style, type, text, array, className = ''}) => {
   switch (type) {
@@ -18,4 +20,6 @@ const StoryElement = ({style, type, text, array, className = ''}) => {
   }
 }
 
-export default StoryElement
+StoryElement.propTypes = PARAGRAPH;
+
+export default StoryElement;

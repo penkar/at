@@ -13,7 +13,6 @@ const MainArticle = ({ className, title, author, story = [] }) => {
       <div className={componentClass}>
         { title && <div className={styles.title}>{ title }</div> }
         { author && <div className={styles.author}>{ author.join(', ') }</div> }
-
         { story.map((str, j) => <StoryElement {...str} key={j} />) }
       </div>
     </div>
