@@ -3,20 +3,20 @@ import { useReducer } from 'react';
 function reactReducer ( state, action ) {
   switch (action.type) {
     case reactReducer.types.SET_STORY_ACTION: {
-      return {...state, newsStoryReducer: action.value};
+      return { ...state, newsStoryReducer: action.value };
     }
     case reactReducer.types.CHANGE_SETTING: {
-      const settingsReducer = {...state.settingsReducer, ...action.setting};
-      return {...state, settingsReducer};
+      const settingsReducer = { ...state.settingsReducer, ...action.setting };
+      return { ...state, settingsReducer };
     }
     case reactReducer.types.CHANGE_SETTING_BOOL: {
-      const {settingsReducer} = state;
+      const { settingsReducer } = state;
       settingsReducer[action.setting] = !settingsReducer[action.setting];
-      return {...state, settingsReducer};
+      return { ...state, settingsReducer };
     }
     case reactReducer.types.SET_STORY_TAGS: {
-      const newsTaglineReducer = action.value.map((str) => ({title:str.title, href:str.id}));
-      return {...state, newsTaglineReducer};
+      const newsTaglineReducer = action.value.map((str) => ({ title: str.title, href: str.id }));
+      return { ...state, newsTaglineReducer };
     }
     default: {
       return state;
@@ -43,7 +43,6 @@ const initialState = {
 
 function useReactReducer () {
   const [state, dispatch] = useReducer(reactReducer, initialState);
-
   const changeSetting = (setting) => dispatch({type: reactReducer.types.CHANGE_SETTING, setting});
   const changeSettingBool = (setting) => dispatch({type: reactReducer.types.CHANGE_SETTING_BOOL, setting});
   const setStoryAction = (value) => dispatch({type: reactReducer.types.SET_STORY_ACTION, value});

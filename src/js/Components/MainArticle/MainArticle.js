@@ -1,10 +1,10 @@
 import React from 'react';
-import { string, array } from 'prop-types';
 import cn from 'classnames';
 
-import styles from './MainArticle.module.scss';
-
+import { ARTICLE } from '../../types/index.js';
 import StoryElement from '../HomePage/StoryElement';
+
+import styles from './MainArticle.module.scss';
 
 const MainArticle = ({ className, title, author, story = [] }) => {
   const componentClass = cn(styles.teaser, className);
@@ -20,11 +20,6 @@ const MainArticle = ({ className, title, author, story = [] }) => {
   );
 }
 
-MainArticle.propTypes = {
-  title: string,
-  author: string,
-  story: array,
-  className: string,
-}
+MainArticle.propTypes = ARTICLE;
 
 export {MainArticle}

@@ -2,10 +2,11 @@ import React from 'react';
 import cn from 'classnames';
 
 import { StoryTeaser } from './StoryTeaser';
+import { ARTICLES } from '../../types/index.js';
 
 import styles from './HomePageBody.module.scss';
 
-const HomePageBody = (stories) => {
+const HomePageBody = ({stories}) => {
   const arr1 = [], arr2 = [], arr3 = [];
   let arr1Sum = 0, arr2Sum = 0, arr3Sum = 0;
   stories.forEach((item, i) => {
@@ -43,5 +44,9 @@ const HomePageBody = (stories) => {
     </div>
   );
 }
+
+HomePageBody.propTypes = {
+  stories: ARTICLES
+};
 
 export {HomePageBody}

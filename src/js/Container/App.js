@@ -38,9 +38,8 @@ export default function App () {
       <div className={cn(styles.appBody, {[styles.tableOfContents]: settingsReducer.tableofcontents})}>
         <Slogan />
         { !hash && RecentStories(newsTaglineReducer) }
-        { stories.length > 1 && HomePageBody(stories) }
-
-        { stories.length === 1 && MainArticle(stories[0]) }
+        { stories.length > 1 && <HomePageBody stories={stories} /> }
+        { stories.length === 1 && <MainArticle {...(stories[0])} /> }
       </div>
     </div>
   );

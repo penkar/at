@@ -1,11 +1,31 @@
 import {
+  any,
   arrayOf,
   bool,
   func,
   shape,
   string,
   node,
+  object,
 } from 'prop-types';
+
+export const ARTICLE = shape({
+  id: string,
+  date: any,
+  section: string,
+  subSection: string,
+  title: string,
+  author: arrayOf(string),
+  header: string,
+  subheader: string,
+  story: arrayOf(shape({
+    text: string,
+    className: string,
+    style: object
+  })),
+});
+
+export const ARTICLES = arrayOf(ARTICLE);
 
 export const BUTTON_PROPS = {
   action: func,
