@@ -1,4 +1,4 @@
-import PropTypes, {
+import {
   any,
   array,
   arrayOf,
@@ -7,16 +7,17 @@ import PropTypes, {
   string,
   node,
   object,
+  shape,
 } from 'prop-types';
 
-export const PARAGRAPH = PropTypes.shape({
+export const PARAGRAPH = shape({
   className: string,
   style: object,
   text: string,
   type: string,
 })
 
-export const ARTICLE = PropTypes.shape({
+export const ARTICLE = shape({
   id: string,
   date: any,
   section: string,
@@ -61,7 +62,7 @@ export const HEADER_LINK = {
   children: node,
 }
 
-export const HEADER_RECENT_STORY = PropTypes.shape({
+export const HEADER_RECENT_STORY = shape({
   title: string,
   href: string,
 });

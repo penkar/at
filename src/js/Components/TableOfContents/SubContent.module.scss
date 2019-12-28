@@ -1,14 +1,12 @@
 .content {
-  border-radius: 4px;
-  padding: 4px;
   background-color: #ffffff;
+  border-radius: 4px;
+  color:#545454;
+  padding: 4px 16px;
+  text-decoration: none;
 
   &:hover {
     background-color: #efefef;
   }
 
-  >a {
-    color:#545454;
-    text-decoration: none;
-  }
 }
