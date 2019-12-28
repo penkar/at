@@ -4,7 +4,7 @@ import cn from 'classnames';
 
 import styles from './MultiContent.module.scss';
 
-export const MultiContent = ({primary = {label:'',key:'',link:''}, secondary = [], className = ''}) => {
+export default function MultiContent ({primary = {label:'',key:'',link:''}, secondary = [], className = ''}) {
   const componentClass = cn(styles.multiContent, styles.contentComponent, className);
 
   return (

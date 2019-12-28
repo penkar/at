@@ -1,1 +1,1 @@
-export * from './MainArticle'
+export * from './MainArticle.jsx'

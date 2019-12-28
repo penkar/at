@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaBars, FaBell, FaSearch } from 'react-icons/fa';
 
-import HeaderButton from './HeaderButton';
-import HeaderLink from './HeaderLink';
+import HeaderButton from './HeaderButton.jsx';
+import HeaderLink from './HeaderLink.jsx';
 import Links from './Links';
 
 import styles from './HeaderRow.module.scss';

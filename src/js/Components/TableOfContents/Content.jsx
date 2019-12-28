@@ -2,11 +2,10 @@ import React from 'react';
 import cn from 'classnames';
 import { FaAngleRight } from 'react-icons/fa'
 
-import styles from './Content.module.scss';
 import { SubContent } from './SubContent';
+import { CONTENT } from '../../types/index.js';
 
-import { CONTENT } from './../../types/index.js';
-
+import styles from './Content.module.scss';
 
 export default function Content ({ className, sublinks, link, label }) {
   const componentClass = cn(styles.content, className);

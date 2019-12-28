@@ -1,3 +1,3 @@
-import HeaderRow from './HeaderRow'
+import HeaderRow from './HeaderRow.jsx'
 
 export {HeaderRow, }

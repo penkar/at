@@ -2,9 +2,9 @@ import React from 'react';
 import { bool } from 'prop-types';
 import cn from 'classnames';
 
-import Content from './Content';
-import { MultiContent } from './MultiContent';
-import Button from '../GenericComponents/Button/Button.js';
+import Content from './Content.jsx';
+import MultiContent from './MultiContent.jsx';
+import Button from '../GenericComponents/Button';
 import { List, MultiLink, } from './SectionList.js';
 
 import styles from './TableOfContents.module.scss'

@@ -1,2 +1,2 @@
-export * from './Slogan'
-export * from './RecentStories'
+export * from './Slogan.jsx'
+export * from './RecentStories.jsx'

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, } from 'react'
 import cn from 'classnames'
 
-import { HeaderRow, TableOfContents, HomePageBody, MainArticle, } from '../Components/'
+import { HeaderRow, TableOfContents, HomePageBody, MainArticle, } from '../Components/index.js'
 import { Slogan, RecentStories, } from '../Components/Functional'
 import ReactReducer from '../Reducers/reactReducer.js';
 import { getStories } from '../Utility';

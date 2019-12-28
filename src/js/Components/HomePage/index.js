@@ -1,2 +1,2 @@
-export * from './StoryTeaser'
-export * from './HomePageBody'
+export * from './StoryTeaser.jsx'
+export * from './HomePageBody.jsx'

@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { StoryTeaser } from './StoryTeaser';
+import { StoryTeaser } from './StoryTeaser.jsx';
 import { ARTICLES } from '../../types/index.js';
 
 import styles from './HomePageBody.module.scss';
