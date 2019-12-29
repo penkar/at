@@ -24,7 +24,12 @@ module.exports = {
         "react"
     ],
     "rules": {
-        "operator-linebreak": 0
+        "no-plusplus": 0,
+        "object-curly-newline": 0,
+        "one-var": 0,
+        "one-var-declaration-per-line": 0,
+        "operator-linebreak": 0,
+        "react/jsx-props-no-spreading": 0
     },
     "parser": 'babel-eslint',
 };

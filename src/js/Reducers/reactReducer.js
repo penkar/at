@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
 
-function reactReducer ( state, action ) {
+function reactReducer(state, action) {
   switch (action.type) {
     case reactReducer.types.SET_STORY_ACTION: {
       return { ...state, newsStoryReducer: action.value };
@@ -29,24 +29,26 @@ reactReducer.types = {
   CHANGE_SETTING_BOOL: 'CHANGE_SETTING_BOOL',
   SET_STORY_ACTION: 'SET_STORY_ACTION',
   SET_STORY_TAGS: 'SET_STORY_TAGS',
-}
+};
 
 const initialState = {
   newsStoryReducer: [],
   newsTaglineReducer: [],
   settingsReducer: {
     tableofcontents: false,
-    searchSection:false,
-    searchString:'',
-  }
-}
+    searchSection: false,
+    searchString: '',
+  },
+};
 
-function useReactReducer () {
+function useReactReducer() {
   const [state, dispatch] = useReducer(reactReducer, initialState);
-  const changeSetting = (setting) => dispatch({type: reactReducer.types.CHANGE_SETTING, setting});
-  const changeSettingBool = (setting) => dispatch({type: reactReducer.types.CHANGE_SETTING_BOOL, setting});
-  const setStoryAction = (value) => dispatch({type: reactReducer.types.SET_STORY_ACTION, value});
-  const setStoryTags = (value) => dispatch({type: reactReducer.types.SET_STORY_TAGS, value});
+  const changeSetting = (setting) => dispatch({ type: reactReducer.types.CHANGE_SETTING, setting });
+  const changeSettingBool = (setting) => dispatch({
+    type: reactReducer.types.CHANGE_SETTING_BOOL, setting,
+  });
+  const setStoryAction = (value) => dispatch({ type: reactReducer.types.SET_STORY_ACTION, value });
+  const setStoryTags = (value) => dispatch({ type: reactReducer.types.SET_STORY_TAGS, value });
 
   return {
     ...state,
@@ -55,8 +57,8 @@ function useReactReducer () {
       changeSettingBool,
       setStoryAction,
       setStoryTags,
-    }
-  }
+    },
+  };
 }
 
 export default useReactReducer;

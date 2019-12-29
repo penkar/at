@@ -1,25 +1,25 @@
 import React from 'react';
-import { object } from 'prop-types';
+import { func, object, shape, string } from 'prop-types';
 import { FaBars, FaBell, FaSearch } from 'react-icons/fa';
 
-import HeaderButton from './HeaderButton.jsx';
-import HeaderLink from './HeaderLink.jsx';
+import HeaderButton from './HeaderButton';
+import HeaderLink from './HeaderLink';
 import Links from './Links';
 import styles from './HeaderRow.module.scss';
 
-const HeaderRow  = ({actions, settings}) => (
+const HeaderRow = ({ actions, settings }) => (
   <div className={styles.headerRow}>
     <ul className={styles.ul}>
       <HeaderButton
         className={styles.searchIcon}
         search={settings.searchSection}
-        clickValue='searchSection'
+        clickValue="searchSection"
         onClick={actions.changeSettingBool}
       >
         <FaSearch className={styles.standardIcon} />
       </HeaderButton>
       <HeaderButton
-        clickValue='tableofcontents'
+        clickValue="tableofcontents"
         onClick={actions.changeSettingBool}
       >
         <span>Sections&nbsp;</span>
@@ -33,11 +33,15 @@ const HeaderRow  = ({actions, settings}) => (
       </HeaderLink>
     </ul>
   </div>
-)
+);
 
 HeaderRow.propTypes = {
-  actions: object,
-  settings: object,
-}
+  actions: shape({
+    [string]: func,
+  }).isRequired,
+  settings: shape({
+    [string]: object,
+  }).isRequired,
+};
 
-export default HeaderRow
+export default HeaderRow;

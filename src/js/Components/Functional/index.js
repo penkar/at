@@ -1,2 +1,2 @@
-export * from './Slogan.jsx'
-export * from './RecentStories.jsx'
+export { default as Slogan } from './Slogan';
+export { default as RecentStories } from './RecentStories';

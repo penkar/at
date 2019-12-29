@@ -1,1 +1,2 @@
-export * from './TableOfContents.jsx';
+/* eslint-disable import/prefer-default-export */
+export { default as TableOfContents } from './TableOfContents';

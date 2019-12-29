@@ -9,6 +9,8 @@ import styles from './Content.module.scss';
 
 export default function Content({ className, sublinks, label }) {
   const componentClass = cn(styles.content, className);
+  const sublinkClass = cn(styles.subContent, styles.thinShadow);
+  let subLinkIndex = 0;
 
   return (
     <div className={componentClass}>
@@ -16,11 +18,11 @@ export default function Content({ className, sublinks, label }) {
       <span className={styles.rightArrow}>
         { Boolean(sublinks.length) && <FaAngleRight style={{ fontSize: '1.5em' }} /> }
       </span>
-      { Boolean(sublinks.length) &&
-        <div className={cn(styles.subContent, styles.thinShadow)}>
-          { sublinks.map((sub, i) => <SubContent {...sub} key={i} />) }
+      { Boolean(sublinks.length) && (
+        <div className={sublinkClass}>
+          { sublinks.map((sub) => <SubContent {...sub} key={subLinkIndex++} />) }
         </div>
-      }
+      )}
     </div>
   );
 }
