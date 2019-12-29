@@ -24,6 +24,7 @@ module.exports = {
         "react"
     ],
     "rules": {
+        "operator-linebreak": 0
     },
     "parser": 'babel-eslint',
 };

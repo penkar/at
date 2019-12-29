@@ -3,9 +3,13 @@ import { string } from 'prop-types';
 
 import styles from './SubContent.module.scss';
 
-export const SubContent = ({ label, link }) => <a className={styles.content} href={link}>{label}</a>;
+export default function SubContent ({ label, link }) {
+  return (
+    <a className={styles.content} href={link}>{label}</a>
+  );
+}
 
 SubContent.propTypes = {
-  label: string,
-  link: string,
-}
+  label: string.isRequired,
+  link: string.isRequired,
+};

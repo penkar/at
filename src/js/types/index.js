@@ -15,7 +15,7 @@ export const PARAGRAPH = shape({
   style: object,
   text: string,
   type: string,
-})
+});
 
 export const ARTICLE = shape({
   id: string,
@@ -39,14 +39,14 @@ export const BUTTON_PROPS = {
   link: string,
   title: string,
   type: string,
-}
+};
 
 export const CONTENT = {
   label: string,
   link: string,
   sublinks: array,
   className: string,
-}
+};
 
 export const HEADER_BUTTON_PROPS = {
   title: string,
@@ -54,13 +54,13 @@ export const HEADER_BUTTON_PROPS = {
   className: string,
   clickValue: string,
   onClick: func,
-}
+};
 
 export const HEADER_LINK = {
   href: string,
   title: string,
   children: node,
-}
+};
 
 export const HEADER_RECENT_STORY = shape({
   title: string,

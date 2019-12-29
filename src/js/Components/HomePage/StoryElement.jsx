@@ -6,9 +6,9 @@ import { PARAGRAPH } from '../../types/index.js';
 const StoryElement = ({type, text, array, className = ''}) => { // styles = {} removed.
   switch (type) {
     case 'title':
-      return <span className={cn('title-story-element', className)}>{text}</span>
+      return (<span className={cn('title-story-element', className)}>{text}</span>);
     case 'author':
-      return <span className={cn('author-story-element', className)}>{text}</span>
+      return (<span className={cn('author-story-element', className)}>{text}</span>);
     case 'list':
       return (
         <ul className={cn('list-story-element', className)}>
@@ -16,7 +16,7 @@ const StoryElement = ({type, text, array, className = ''}) => { // styles = {} r
         </ul>
       );
     default:
-      return <span className={cn('title-story-element', className)}>{text}</span>
+      return (<span className={cn('title-story-element', className)}>{text}</span>);
   }
 }
 

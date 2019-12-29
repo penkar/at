@@ -4,7 +4,7 @@ import cn from 'classnames'
 import { HeaderRow, TableOfContents, HomePageBody, MainArticle, } from '../Components/index.js'
 import { Slogan, RecentStories, } from '../Components/Functional'
 import ReactReducer from '../Reducers/reactReducer.js';
-import { getStories } from '../Utility';
+import getStories from '../Utility/Api.js';
 import styles from './App.module.scss';
 
 export default function App () {
