@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import { PARAGRAPH } from '../../types/index.js';
 
-const StoryElement = ({style, type, text, array, className = ''}) => {
+const StoryElement = ({type, text, array, className = ''}) => { // styles = {} removed.
   switch (type) {
     case 'title':
       return <span className={cn('title-story-element', className)}>{text}</span>

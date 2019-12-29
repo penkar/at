@@ -6,7 +6,7 @@ import { SubContent } from './SubContent';
 import { CONTENT } from '../../types/index.js';
 import styles from './Content.module.scss';
 
-export default function Content ({ className, sublinks, link, label }) {
+export default function Content ({ className, sublinks, label }) {
   const componentClass = cn(styles.content, className);
 
   return (
@@ -17,7 +17,7 @@ export default function Content ({ className, sublinks, link, label }) {
       </span>
       { Boolean(sublinks.length) &&
         <div className={cn(styles.subContent, styles.thinShadow)}>
-          { sublinks.map((sub) => <SubContent {...sub} />) }
+          { sublinks.map((sub, i) => <SubContent {...sub} key={i} />) }
         </div>
       }
     </div>

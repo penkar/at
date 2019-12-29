@@ -17,7 +17,7 @@ export default function MultiContent ({primary = {label:'',key:'',link:''}, seco
       )) }
     </div>
   )
-};
+}
 
 MultiContent.propTypes = {
   className: string,

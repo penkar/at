@@ -16,4 +16,4 @@ export default function HeaderLink ({ className='', title='', children=null, lin
   );
 }
 
-HeaderLink.prototypes = HEADER_LINK;
+HeaderLink.propTypes = HEADER_LINK;

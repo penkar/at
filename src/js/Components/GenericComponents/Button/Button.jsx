@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { BUTTON_PROPS } from '../../../types';
 import styles from './Button.module.scss';
 
-const Button = ({ action, full=false, label='', link='', title='', type='primary' }) => {
+const Button = ({ action, full=false, label='', title='', type='primary' }) => { // link='' not used
   const buttonClass = cn(styles.genericButtonComponent, {
     [styles.full]: full,
     [styles.primary]: type === 'primary',

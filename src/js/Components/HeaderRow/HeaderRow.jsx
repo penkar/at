@@ -1,4 +1,5 @@
 import React from 'react';
+import { object } from 'prop-types';
 import { FaBars, FaBell, FaSearch } from 'react-icons/fa';
 
 import HeaderButton from './HeaderButton.jsx';
@@ -33,5 +34,10 @@ const HeaderRow  = ({actions, settings}) => (
     </ul>
   </div>
 )
+
+HeaderRow.propTypes = {
+  actions: object,
+  settings: object,
+}
 
 export default HeaderRow

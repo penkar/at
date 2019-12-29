@@ -57,6 +57,6 @@ function useReactReducer () {
       setStoryTags,
     }
   }
-};
+}
 
 export default useReactReducer;

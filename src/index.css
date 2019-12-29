@@ -25,19 +25,6 @@ code {
   src: url(./fonts/JacquesFrancoisShadow-Regular.ttf)
 }
 
-
-
-
-
-
-/* html, body {
-  font-family: sans-serif;
-  border: 0px;
-  margin: 0px;
-  height: 100vh;
-  overflow-x: hidden;
-} */
-
 * {
   transition-timing-function: ease-in;
   transition: 0.75s;
@@ -49,12 +36,10 @@ code {
   display: flex;
 }
 
-hr {
-  &.medium-divider {
-    border: solid 1.5px black;
-  }
+hr.medium-divider {
+  border: solid 1.5px black;
+}
 
-  &.thin-divider {
-    border: solid 1.5px black;
-  }
+hr.thin-divider {
+  border: solid 1.5px black;
 }

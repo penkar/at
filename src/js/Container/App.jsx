@@ -17,8 +17,6 @@ export default function App () {
     window.onhashchange = () => changeHash(window.location.hash.replace(/^#/,''));
     getStories(actions);
     // document.addEventListener('click', this._click);
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let stories = [];
