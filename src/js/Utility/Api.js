@@ -1,6 +1,6 @@
-import Sample from './Sample'
+import Sample from './Sample';
 
-export const getStories = (actions) => {
+const getStories = (actions) => {
   actions.setStoryTags(Sample);
   actions.setStoryAction(Sample);
   // fetch(``)
@@ -8,4 +8,6 @@ export const getStories = (actions) => {
   //   .then(response=> {
   //     console.log(resonse);
   //   })
-}
+};
+
+export default getStories;
