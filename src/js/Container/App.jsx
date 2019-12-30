@@ -29,8 +29,7 @@ export default function App() {
   } else if (hash) {
     stories = newsStoryReducer.filter((str) => (str.section === hash || str.subSection === hash));
   }
-  const appBodyClass = cn(styles.appBody,
-    { [styles.tableOfContents]: settingsReducer.tableofcontents });
+  const appBodyClass = cn(styles.appBody, { [styles.tableOfContents]: settingsReducer.tableofcontents });
 
   return (
     <div>
@@ -38,7 +37,7 @@ export default function App() {
       <TableOfContents open={settingsReducer.tableofcontents} />
       <div className={appBodyClass}>
         <Slogan />
-        { !hash && RecentStories(newsTaglineReducer) }
+        { !hash && <RecentStories recentStories={newsTaglineReducer} /> }
         { stories.length > 1 && <HomePageBody stories={stories} /> }
         { stories.length === 1 && <MainArticle {...(stories[0])} /> }
       </div>

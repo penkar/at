@@ -33,7 +33,6 @@ export default function Slogan({ title }) {
 Slogan.propTypes = {
   title: string,
 };
-
 Slogan.defaultProps = {
   title: 'Not the Washington Post',
 };

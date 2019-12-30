@@ -8,9 +8,8 @@ import Button from '../GenericComponents/Button';
 import { List, MultiLink } from './SectionList';
 import styles from './TableOfContents.module.scss';
 
-const TableOfContents = ({ open }) => {
-  const componentClass = cn(styles.tableOfContentsComponent,
-    { [styles.open]: open, [styles.closed]: !open });
+export default function TableOfContents({ open }) {
+  const componentClass = cn(styles.tableOfContentsComponent, { [styles.open]: open, [styles.closed]: !open });
 
   return (
     <div id="TableOfContents" className={componentClass}>
@@ -21,7 +20,7 @@ const TableOfContents = ({ open }) => {
       <hr className={styles.fullBreak} />
     </div>
   );
-};
+}
 
 TableOfContents.propTypes = {
   open: bool,
@@ -29,4 +28,3 @@ TableOfContents.propTypes = {
 TableOfContents.defaultProps = {
   open: false,
 };
-export default TableOfContents;

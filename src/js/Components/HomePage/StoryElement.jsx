@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import { PARAGRAPH } from '../../types/index';
 
-const StoryElement = ({ type, text, array, className }) => { // styles = {} removed.
+export default function StoryElement({ type, text, array, className }) { // styles = {} removed.
   switch (type) {
     case 'title':
       return (<span className={cn('title-story-element', className)}>{text}</span>);
@@ -22,7 +22,7 @@ const StoryElement = ({ type, text, array, className }) => { // styles = {} remo
     default:
       return (<span className={cn('title-story-element', className)}>{text}</span>);
   }
-};
+}
 
 StoryElement.propTypes = PARAGRAPH;
 StoryElement.defaultProps = {
@@ -31,5 +31,3 @@ StoryElement.defaultProps = {
   text: '',
   array: [],
 };
-
-export default StoryElement;

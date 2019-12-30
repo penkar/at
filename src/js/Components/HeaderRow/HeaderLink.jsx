@@ -6,6 +6,7 @@ import styles from './HeaderLink.module.scss';
 
 export default function HeaderLink({ className, title, children, link }) {
   const headerLinkClass = cn(styles.li, className);
+
   return (
     <li className={headerLinkClass}>
       <a href={link}>

@@ -5,7 +5,7 @@ import { StoryTeaser } from './StoryTeaser';
 import { ARTICLES } from '../../types/index';
 import styles from './HomePageBody.module.scss';
 
-const HomePageBody = ({ stories }) => {
+export default function HomePageBody({ stories }) {
   const arr1 = [], arr2 = [], arr3 = [];
   let arr1Sum = 0, arr2Sum = 0, arr3Sum = 0;
   let storyIndex = 0;
@@ -38,10 +38,11 @@ const HomePageBody = ({ stories }) => {
       <div className={colClass}>{arr3}</div>
     </div>
   );
-};
+}
 
 HomePageBody.propTypes = {
-  stories: ARTICLES.isRequired,
+  stories: ARTICLES,
 };
-
-export default HomePageBody;
+HomePageBody.defaultProps = {
+  stories: [],
+};

@@ -67,4 +67,6 @@ export const HEADER_RECENT_STORY = shape({
   href: string,
 });
 
-export const RECENT_STORIES = arrayOf(HEADER_RECENT_STORY);
+export const RECENT_STORIES = {
+  recentStories: arrayOf(HEADER_RECENT_STORY),
+};

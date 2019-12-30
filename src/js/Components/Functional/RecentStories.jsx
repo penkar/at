@@ -3,11 +3,11 @@ import React from 'react';
 import { RECENT_STORIES } from '../../types';
 import styles from './RecentStories.module.scss';
 
-export default function RecentStories(array = []) {
+export default function RecentStories({ recentStories }) {
   return (
     <ul className={styles.recentSectional}>
       <li className={styles.label} key="title">In the News&nbsp;</li>
-      { array.map((story) => (
+      { recentStories.map((story) => (
         <li className={styles.recentTitle} key={story.title}>
           <a href={`#${story.href || ''}`}>{story.title}</a>
         </li>
@@ -16,4 +16,9 @@ export default function RecentStories(array = []) {
   );
 }
 
-RecentStories.propTypes = RECENT_STORIES;
+RecentStories.propTypes = {
+  recentStories: RECENT_STORIES,
+};
+RecentStories.defaultProps = {
+  recentStories: [],
+};
