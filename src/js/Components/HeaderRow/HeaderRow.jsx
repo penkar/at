@@ -1,8 +1,9 @@
 import React from 'react';
 import { func, object, shape, string } from 'prop-types';
-import { FaBars, FaBell, FaSearch } from 'react-icons/fa';
+import { FaBars, FaBell } from 'react-icons/fa';
 
 import HeaderButton from './HeaderButton';
+import TransitionHeaderButton from './TransitionHeaderButton';
 import HeaderLink from './HeaderLink';
 import Links from './Links';
 import styles from './HeaderRow.module.scss';
@@ -11,14 +12,13 @@ export default function HeaderRow({ actions, settings }) {
   return (
     <div className={styles.headerRow}>
       <ul className={styles.ul}>
-        <HeaderButton
+        <TransitionHeaderButton
           className={styles.searchIcon}
           search={settings.searchSection}
+          changeSearch={actions.changeSetting}
           clickValue="searchSection"
           onClick={actions.changeSettingBool}
-        >
-          <FaSearch className={styles.standardIcon} />
-        </HeaderButton>
+        />
         <HeaderButton
           clickValue="tableofcontents"
           onClick={actions.changeSettingBool}

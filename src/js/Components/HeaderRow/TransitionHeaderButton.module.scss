@@ -1,0 +1,42 @@
+.newsButton {
+  background-color: #1f1f1f;
+  border: 0.5px solid #444;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #ffffffbf;
+  display: flex;
+  height: 32px;
+  margin-right: 8px;
+  min-width:18px;
+  padding: 6px 10px;
+  
+  &:hover {
+    border-color: #ffffff;
+  }
+}
+
+.search {
+  background-color: #ffffff;
+  color: #000000bf;
+  min-width: 200px;
+  input {
+    color: #000000bf;
+    width: 155px
+  }
+  svg {
+    color: #000000bf;
+    margin-right: 5px;
+  }
+}
+
+.inputField {
+  box-sizing: border-box;
+  border: 0px;
+  padding: 0px;
+  width: 0px;
+}
+
+.standardIcon {
+  color: #ffffff;
+  font-size: 1rem;
+}

@@ -43,7 +43,7 @@ const initialState = {
 
 function useReactReducer() {
   const [state, dispatch] = useReducer(reactReducer, initialState);
-  const changeSetting = (setting) => dispatch({ type: reactReducer.types.CHANGE_SETTING, setting });
+  const changeSetting = (setting) => dispatch({ type: reactReducer.types.CHANGE_SETTING, ...setting });
   const changeSettingBool = (setting) => dispatch({
     type: reactReducer.types.CHANGE_SETTING_BOOL, setting,
   });
