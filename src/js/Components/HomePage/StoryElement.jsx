@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { PARAGRAPH } from '../../types/index';
+import { STORY_ELEMENT } from '../../types/index';
 
 export default function StoryElement({ type, text, array, className }) { // styles = {} removed.
   switch (type) {
@@ -24,7 +24,7 @@ export default function StoryElement({ type, text, array, className }) { // styl
   }
 }
 
-StoryElement.propTypes = PARAGRAPH;
+StoryElement.propTypes = STORY_ELEMENT;
 StoryElement.defaultProps = {
   className: '',
   type: '',

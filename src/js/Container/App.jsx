@@ -38,8 +38,11 @@ export default function App() {
       <div className={appBodyClass}>
         <Slogan />
         { !hash && <RecentStories recentStories={newsTaglineReducer} /> }
-        { stories.length > 1 && <HomePageBody stories={stories} /> }
-        { stories.length === 1 && <MainArticle {...(stories[0])} /> }
+        { stories.length > 1 ? (
+          <HomePageBody stories={stories} />
+        ) : (
+          <MainArticle {...(stories[0])} />
+        )}
       </div>
     </div>
   );

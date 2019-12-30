@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cn from 'classnames';
 
 import { ARTICLE } from '../../types/index';
@@ -22,8 +23,14 @@ export default function MainArticle({ className, title, author, story }) {
 
 MainArticle.propTypes = ARTICLE;
 MainArticle.defaultProps = {
-  className: '',
-  title: '',
   author: [],
+  className: '',
+  date: new Date(),
+  header: '',
+  id: '',
   story: [],
+  section: '',
+  subheader: '',
+  subSection: '',
+  title: '',
 };

@@ -10,6 +10,20 @@ import {
   shape,
 } from 'prop-types';
 
+export const PARAGRAPH2 = {
+  className: string,
+  type: string,
+  text: string,
+  array: arrayOf(string),
+};
+
+export const STORY_ELEMENT = {
+  className: string,
+  type: string,
+  text: string,
+  array: arrayOf(string),
+};
+
 export const PARAGRAPH = shape({
   className: string,
   style: object,
@@ -17,19 +31,20 @@ export const PARAGRAPH = shape({
   type: string,
 });
 
-export const ARTICLE = shape({
-  id: string,
-  date: any,
-  section: string,
-  subSection: string,
-  title: string,
+export const ARTICLE = {
   author: arrayOf(string),
+  className: string,
+  date: any,
+  id: string,
   header: string,
+  section: string,
   subheader: string,
-  story: arrayOf(PARAGRAPH),
-});
+  subSection: string,
+  story: arrayOf(shape(STORY_ELEMENT)),
+  title: string,
+};
 
-export const ARTICLES = arrayOf(ARTICLE);
+export const ARTICLES = arrayOf(shape(ARTICLE));
 
 export const BUTTON_PROPS = {
   action: func,
@@ -67,6 +82,4 @@ export const HEADER_RECENT_STORY = shape({
   href: string,
 });
 
-export const RECENT_STORIES = {
-  recentStories: arrayOf(HEADER_RECENT_STORY),
-};
+export const RECENT_STORIES = arrayOf(HEADER_RECENT_STORY);
