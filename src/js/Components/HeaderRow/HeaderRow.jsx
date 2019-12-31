@@ -1,11 +1,11 @@
 import React from 'react';
-import { func, object, shape, string } from 'prop-types';
 import { FaBars, FaBell } from 'react-icons/fa';
 
 import HeaderButton from './HeaderButton';
 import TransitionHeaderButton from './TransitionHeaderButton';
 import HeaderLink from './HeaderLink';
 import Links from './Links';
+import { HEADER_ROW_PROPS } from '../../types';
 import styles from './HeaderRow.module.scss';
 
 export default function HeaderRow({ actions, settings }) {
@@ -37,11 +37,4 @@ export default function HeaderRow({ actions, settings }) {
   );
 }
 
-HeaderRow.propTypes = {
-  actions: shape({
-    [string]: func,
-  }).isRequired,
-  settings: shape({
-    [string]: object,
-  }).isRequired,
-};
+HeaderRow.propTypes = HEADER_ROW_PROPS;

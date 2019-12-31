@@ -4,24 +4,24 @@ import {
   arrayOf,
   bool,
   func,
-  string,
   node,
   object,
   shape,
+  string,
 } from 'prop-types';
 
 export const PARAGRAPH2 = {
-  className: string,
-  type: string,
-  text: string,
   array: arrayOf(string),
+  className: string,
+  text: string,
+  type: string,
 };
 
 export const STORY_ELEMENT = {
-  className: string,
-  type: string,
-  text: string,
   array: arrayOf(string),
+  className: string,
+  text: string,
+  type: string,
 };
 
 export const PARAGRAPH = shape({
@@ -35,12 +35,12 @@ export const ARTICLE = {
   author: arrayOf(string),
   className: string,
   date: any,
-  id: string,
   header: string,
+  id: string,
   section: string,
+  story: arrayOf(shape(STORY_ELEMENT)),
   subheader: string,
   subSection: string,
-  story: arrayOf(shape(STORY_ELEMENT)),
   title: string,
 };
 
@@ -57,29 +57,49 @@ export const BUTTON_PROPS = {
 };
 
 export const CONTENT = {
+  className: string,
   label: string,
   link: string,
   sublinks: array,
-  className: string,
 };
 
 export const HEADER_BUTTON_PROPS = {
-  title: string,
-  link: string,
+  changeSearch: func,
   className: string,
   clickValue: string,
+  link: string,
   onClick: func,
+  title: string,
 };
 
 export const HEADER_LINK = {
+  children: node,
   href: string,
   title: string,
-  children: node,
 };
 
 export const HEADER_RECENT_STORY = shape({
-  title: string,
   href: string,
+  title: string,
+});
+
+export const HEADER_ROW_PROPS = shape({
+  actions: shape({
+    [string]: func,
+  }).isRequired,
+  settings: shape({
+    [string]: object,
+  }).isRequired,
 });
 
 export const RECENT_STORIES = arrayOf(HEADER_RECENT_STORY);
+
+export const MULTI_CONTENT_PROPS = {
+  className: string,
+  primary: shape({
+    label: string,
+    key: string,
+    link: string,
+  }),
+  secondary: array,
+};

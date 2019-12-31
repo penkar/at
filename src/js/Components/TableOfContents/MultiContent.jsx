@@ -1,8 +1,8 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
-import { shape, string, array } from 'prop-types';
 import cn from 'classnames';
 
+import { MULTI_CONTENT_PROPS } from '../../types/index';
 import styles from './MultiContent.module.scss';
 
 export default function MultiContent({ primary, secondary, className }) {
@@ -20,15 +20,7 @@ export default function MultiContent({ primary, secondary, className }) {
   );
 }
 
-MultiContent.propTypes = {
-  className: string,
-  primary: shape({
-    label: string,
-    key: string,
-    link: string,
-  }),
-  secondary: array,
-};
+MultiContent.propTypes = MULTI_CONTENT_PROPS;
 MultiContent.defaultProps = {
   className: '',
   primary: {

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FaSearch } from 'react-icons/fa';
 import cn from 'classnames';
 
@@ -10,8 +9,8 @@ export default function TransitionHeaderButton({
   changeSearch,
   clickValue,
   className,
-  search,
   onClick,
+  search,
 }) {
   const onButtonClick = () => onClick(clickValue);
   const componentClass = cn(styles.newsButton, className, { [styles.search]: search });
@@ -31,9 +30,5 @@ export default function TransitionHeaderButton({
   );
 }
 
-TransitionHeaderButton.propTypes = {
-  ...HEADER_BUTTON_PROPS,
-  changeSearch: PropTypes.func.isRequired,
-};
-TransitionHeaderButton.defaultProps = {
-};
+TransitionHeaderButton.propTypes = HEADER_BUTTON_PROPS;
+TransitionHeaderButton.defaultProps = {};
