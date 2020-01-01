@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import cn from 'classnames';
 
 import { TableOfContents, HomePageBody } from '../Components/index';
@@ -18,8 +18,17 @@ export default function App() {
     title.innerText = `News of the Day ${(new Date()).toLocaleDateString()}`;
     window.onhashchange = () => changeHash(window.location.hash.replace(/^#/, ''));
     getStories(actions);
-    // document.addEventListener('click', this._click);
   }, []);
+
+  const tableOfContents = settingsReducer.tableofcontents;
+  useMemo(() => {
+    const pageClick = ({ target }) => {
+      const toc = document.getElementById('TableOfContents');
+      if (tableOfContents && !toc.contains(target)) actions.changeSettingBool('tableofcontents');
+    };
+    document.addEventListener('click', pageClick);
+    return () => document.removeEventListener('click', pageClick);
+  }, [tableOfContents]);
 
   let stories = [];
   if (!hash) {
