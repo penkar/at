@@ -10,13 +10,6 @@ import {
   string,
 } from 'prop-types';
 
-export const PARAGRAPH2 = {
-  array: arrayOf(string),
-  className: string,
-  text: string,
-  type: string,
-};
-
 export const STORY_ELEMENT = {
   array: arrayOf(string),
   className: string,
