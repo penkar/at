@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, createRef, useLayoutEffect } from 'react';
 import cn from 'classnames';
 
 import { TableOfContents, HomePageBody } from '../Components/index';
@@ -10,6 +10,7 @@ import getStories from '../Utility/Api';
 import styles from './App.module.scss';
 
 export default function App() {
+  const applicationBody = createRef();
   const { actions, settingsReducer, newsTaglineReducer, newsStoryReducer } = ReactReducer();
   const [hash, changeHash] = useState(window.location.hash.replace(/^#/, ''));
 
@@ -21,14 +22,15 @@ export default function App() {
   }, []);
 
   const tableOfContents = settingsReducer.tableofcontents;
-  useMemo(() => {
+  useLayoutEffect(() => {
     const pageClick = ({ target }) => {
-      const toc = document.getElementById('TableOfContents');
-      if (tableOfContents && !toc.contains(target)) actions.changeSettingBool('tableofcontents');
+      if (tableOfContents && applicationBody.current.contains(target)) {
+        actions.changeSettingBool('tableofcontents');
+      }
     };
     document.addEventListener('click', pageClick);
     return () => document.removeEventListener('click', pageClick);
-  }, [tableOfContents]);
+  }, [tableOfContents, applicationBody]);
 
   let stories = [];
   if (!hash) {
@@ -44,7 +46,7 @@ export default function App() {
     <div>
       <HeaderRow actions={actions} settings={settingsReducer} />
       <TableOfContents open={settingsReducer.tableofcontents} />
-      <div className={appBodyClass}>
+      <div className={appBodyClass} ref={applicationBody}>
         <Slogan />
         { !hash && <RecentStories recentStories={newsTaglineReducer} /> }
         { stories.length > 1 ? (
