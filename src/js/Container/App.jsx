@@ -5,27 +5,31 @@ import { TableOfContents, HomePageBody } from '../Components/index';
 import HeaderRow from '../Components/HeaderRow/HeaderRow';
 import MainArticle from '../Components/MainArticle/MainArticle';
 import { Slogan, RecentStories } from '../Components/Functional';
-import ReactReducer from '../Reducers/reactReducer';
+
+import NewsStoriesReducer from '../Reducers/newsStoriesReducer';
+import SettingsReducer from '../Reducers/settingsReducer';
+
 import getStories from '../Utility/Api';
 import styles from './App.module.scss';
 
 export default function App() {
   const applicationBody = createRef();
-  const { actions, settingsReducer, newsTaglineReducer, newsStoryReducer } = ReactReducer();
+  const { newsStoryActions, newsTaglineReducer, newsStoryReducer } = NewsStoriesReducer();
+  const { settings, settingsActions } = SettingsReducer();
   const [hash, changeHash] = useState(window.location.hash.replace(/^#/, ''));
 
   useEffect(() => {
     const title = document.getElementsByTagName('title')[0];
     title.innerText = `News of the Day ${(new Date()).toLocaleDateString()}`;
     window.onhashchange = () => changeHash(window.location.hash.replace(/^#/, ''));
-    getStories(actions);
+    getStories(newsStoryActions);
   }, []);
 
-  const tableOfContents = settingsReducer.tableofcontents;
+  const tableOfContents = settings.tableofcontents;
   useLayoutEffect(() => {
     const pageClick = ({ target }) => {
       if (tableOfContents && applicationBody.current.contains(target)) {
-        actions.changeSettingBool('tableofcontents');
+        settingsActions.changeSettingBool('tableofcontents');
       }
     };
     document.addEventListener('click', pageClick);
@@ -40,12 +44,12 @@ export default function App() {
   } else if (hash) {
     stories = newsStoryReducer.filter((str) => (str.section === hash || str.subSection === hash));
   }
-  const appBodyClass = cn(styles.appBody, { [styles.tableOfContents]: settingsReducer.tableofcontents });
+  const appBodyClass = cn(styles.appBody, { [styles.tableOfContents]: settings.tableofcontents });
 
   return (
     <div>
-      <HeaderRow actions={actions} settings={settingsReducer} />
-      <TableOfContents open={settingsReducer.tableofcontents} />
+      <HeaderRow actions={settingsActions} settings={settings} />
+      <TableOfContents open={settings.tableofcontents} />
       <div className={appBodyClass} ref={applicationBody}>
         <Slogan />
         { !hash && <RecentStories recentStories={newsTaglineReducer} /> }
