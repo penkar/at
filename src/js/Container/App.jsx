@@ -1,5 +1,6 @@
 import React, { useState, useEffect, createRef, useLayoutEffect } from 'react';
 import cn from 'classnames';
+import { BrowserRouter } from 'react-router-dom';
 
 import { TableOfContents, HomePageBody } from '../Components/index';
 import HeaderRow from '../Components/HeaderRow/HeaderRow';
@@ -47,18 +48,20 @@ export default function App() {
   const appBodyClass = cn(styles.appBody, { [styles.tableOfContents]: settings.tableofcontents });
 
   return (
-    <div>
-      <HeaderRow actions={settingsActions} settings={settings} />
-      <TableOfContents open={settings.tableofcontents} />
-      <div className={appBodyClass} ref={applicationBody}>
-        <Slogan />
-        { !hash && <RecentStories recentStories={newsTaglineReducer} /> }
-        { stories.length > 1 ? (
-          <HomePageBody stories={stories} />
-        ) : (
-          <MainArticle {...(stories[0])} />
-        )}
+    <BrowserRouter>
+      <div>
+        <HeaderRow actions={settingsActions} settings={settings} />
+        <TableOfContents open={settings.tableofcontents} />
+        <div className={appBodyClass} ref={applicationBody}>
+          <Slogan />
+          { !hash && <RecentStories recentStories={newsTaglineReducer} /> }
+          { stories.length > 1 ? (
+            <HomePageBody stories={stories} />
+          ) : (
+            <MainArticle {...(stories[0])} />
+          )}
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }

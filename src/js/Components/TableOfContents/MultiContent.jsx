@@ -1,5 +1,6 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
 import { MULTI_CONTENT_PROPS } from '../../types/index';
@@ -10,11 +11,11 @@ export default function MultiContent({ primary, secondary, className }) {
 
   return (
     <div className={componentClass}>
-      <a className={styles.primary} href={primary.link}>
+      <Link className={styles.primary} to={`/section/${primary.link}`}>
         { primary.label }
-      </a>
+      </Link>
       { secondary.map((item) => (
-        <a className={styles.secondary} href={item.link} key={item.key}>{item.label}</a>
+        <Link className={styles.secondary} to={`/section/${item.link}`} key={item.key}>{item.label}</Link>
       )) }
     </div>
   );

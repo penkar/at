@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
 import { HEADER_LINK } from '../../types';
@@ -9,10 +10,10 @@ export default function HeaderLink({ className, title, children, link }) {
 
   return (
     <li className={headerLinkClass}>
-      <a href={link}>
+      <Link to={`/section/${link}`}>
         { title }
         { children }
-      </a>
+      </Link>
     </li>
   );
 }

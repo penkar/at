@@ -22,23 +22,23 @@ const List = [{
   sublinks: [{
     label: 'The White House',
     key: 'thewhitehouse',
-    link: '#thewhitehouse',
+    link: 'thewhitehouse',
   }, {
     label: 'Courts and Law',
     key: 'courtsandlaw',
-    link: '#courtsandlaw',
+    link: 'courtsandlaw',
   }, {
     label: 'Polling',
     key: 'polling',
-    link: '#polling',
+    link: 'polling',
   }, {
     label: 'Senate',
     key: 'senate',
-    link: '#senate',
+    link: 'senate',
   }, {
     label: 'House of Representatives',
     key: 'houseofrepresentatives',
-    link: '#houseofrepresentatives',
+    link: 'houseofrepresentatives',
   }],
 }, {
   label: 'Sports',
@@ -47,15 +47,15 @@ const List = [{
   sublinks: [{
     label: 'NFL',
     key: 'nfl',
-    link: '#nfl',
+    link: 'nfl',
   }, {
     label: 'NBA',
     key: 'nba',
-    link: '#nba',
+    link: 'nba',
   }, {
     label: 'MLB',
     key: 'mlb',
-    link: '#mlb',
+    link: 'mlb',
   }],
 }, {
   label: 'News Letter',
@@ -69,19 +69,19 @@ const List = [{
   sublinks: [{
     label: 'Education',
     key: 'education',
-    link: '#education',
+    link: 'education',
   }, {
     label: 'Investigations',
     key: 'investigations',
-    link: '#investigations',
+    link: 'investigations',
   }, {
     label: 'Obituaries',
     key: 'obituaries',
-    link: '#obituaries',
+    link: 'obituaries',
   }, {
     label: 'National Security',
     key: 'nationalsecurity',
-    link: '#nationalsecurity',
+    link: 'nationalsecurity',
   }, {
     label: 'Health & Science',
     key: 'HealthScience',
@@ -89,7 +89,7 @@ const List = [{
   }, {
     label: 'True Crime',
     key: 'truecrime',
-    link: '#truecrime',
+    link: 'truecrime',
   }],
 }, {
   label: 'Tech',
@@ -98,11 +98,11 @@ const List = [{
   sublinks: [{
     label: 'Innovation',
     key: 'innovation',
-    link: '#innovation',
+    link: 'innovation',
   }, {
     label: 'Silicon Valley',
     key: 'siliconvalley',
-    link: '#siliconvalley',
+    link: 'siliconvalley',
   }],
 }, {
   label: 'Business',
@@ -111,27 +111,27 @@ const List = [{
   sublinks: [{
     label: 'On Leadership',
     key: 'onleadership',
-    link: '#onleadership',
+    link: 'onleadership',
   }, {
     label: 'Personal Finance',
     key: 'personalfinance',
-    link: '#personalfinance',
+    link: 'personalfinance',
   }, {
     label: 'Energy and Environment',
     key: 'energyandenvironment',
-    link: '#energyandenvironment',
+    link: 'energyandenvironment',
   }, {
     label: 'Markets',
     key: 'markets',
-    link: '#markets',
+    link: 'markets',
   }, {
     label: 'World Business',
     key: 'worldbusiness',
-    link: '#worldbusiness',
+    link: 'worldbusiness',
   }, {
     label: 'Capital Markets',
     key: 'capitalmarkets',
-    link: '#capitalmarkets',
+    link: 'capitalmarkets',
   }],
 }, {
   label: 'Entertainment',
@@ -140,35 +140,35 @@ const List = [{
   sublinks: [{
     label: 'Books',
     key: 'books',
-    link: '#books',
+    link: 'books',
   }, {
     label: 'Comics',
     key: 'comics',
-    link: '#comics',
+    link: 'comics',
   }, {
     label: 'Television',
     key: 'television',
-    link: '#television',
+    link: 'television',
   }, {
     label: 'Movies',
     key: 'movies',
-    link: '#movies',
+    link: 'movies',
   }, {
     label: 'Museum',
     key: 'museum',
-    link: '#museum',
+    link: 'museum',
   }, {
     label: 'Music',
     key: 'music',
-    link: '#music',
+    link: 'music',
   }, {
     label: 'Theater and Dance',
     key: 'theateranddance',
-    link: '#theateranddance',
+    link: 'theateranddance',
   }, {
     label: 'Bars / Clubs',
     key: 'barsclubs',
-    link: '#barsclubs',
+    link: 'barsclubs',
   }],
 }, {
   label: 'Lifestyle',
@@ -177,23 +177,23 @@ const List = [{
   sublinks: [{
     label: 'Food',
     key: 'food',
-    link: '#food',
+    link: 'food',
   }, {
     label: 'Travel',
     key: 'travel',
-    link: '#travel',
+    link: 'travel',
   }, {
     label: 'Wellness',
     key: 'wellness',
-    link: '#wellness',
+    link: 'wellness',
   }, {
     label: 'Fashion',
     key: 'fashion',
-    link: '#fashion',
+    link: 'fashion',
   }, {
     label: 'Home and Garden',
     key: 'homeandgarden',
-    link: '#homeandgarden',
+    link: 'homeandgarden',
   }],
 }];
 

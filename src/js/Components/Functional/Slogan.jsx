@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { string } from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import styles from './Slogan.module.scss';
 
@@ -10,9 +11,9 @@ const date = new Date();
 export default function Slogan({ title }) {
   return (
     <div>
-      <a href="/" className={styles.text}>
+      <Link to="/" className={styles.text}>
         {title}
-      </a>
+      </Link>
       <div className={styles.rowText}>
         <span className={cn(styles.column, styles.left)}>
           {`${Months[date.getMonth()]} ${date.getDate()}, ${1900 + date.getYear()}`}
@@ -22,7 +23,7 @@ export default function Slogan({ title }) {
         </span>
         <span className={cn(styles.column, styles.right)}>
           Edition:&nbsp;
-          <a style={{ color: 'black' }} href="/#">Web</a>
+          <Link style={{ color: 'black' }} to="/">Web</Link>
         </span>
       </div>
       <hr className={styles.mediumDivider} />

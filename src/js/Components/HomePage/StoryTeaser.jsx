@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
 import StoryElement from './StoryElement';
@@ -8,7 +9,7 @@ import styles from './StoryTeaser.module.scss';
 export default function StoryTeaser({ story, className, author, title, id }) {
   return (
     <div className={cn(styles.teaser, className)}>
-      { title && <a href={`#${id}`} className={styles.title}>{title}</a> }
+      { title && <Link to={`/article/${id}`} className={styles.title}>{title}</Link> }
       { author && <div className={styles.author}>{author.join(', ')}</div> }
       { story[0] && <StoryElement {...story[0]} /> }
       { story[1] && <StoryElement {...story[1]} /> }
