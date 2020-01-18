@@ -96,3 +96,9 @@ export const MULTI_CONTENT_PROPS = {
   }),
   secondary: array,
 };
+
+export const PATHWAY_PROPS = {
+  location: shape({
+    pathname: string.isRequired,
+  }).isRequired,
+};

@@ -1,8 +1,9 @@
-import React, { useState, useEffect, createRef, useLayoutEffect } from 'react';
+import React, { useEffect, createRef, useLayoutEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import cn from 'classnames';
-import { BrowserRouter } from 'react-router-dom';
 
 import { TableOfContents, HomePageBody } from '../Components/index';
+import { PATHWAY_PROPS } from '../types';
 import HeaderRow from '../Components/HeaderRow/HeaderRow';
 import MainArticle from '../Components/MainArticle/MainArticle';
 import { Slogan, RecentStories } from '../Components/Functional';
@@ -13,16 +14,15 @@ import SettingsReducer from '../Reducers/settingsReducer';
 import getStories from '../Utility/Api';
 import styles from './App.module.scss';
 
-export default function App() {
+export default function App({ location: { pathname } }) {
+  const [, section, id] = pathname.split('/');
   const applicationBody = createRef();
   const { newsStoryActions, newsTaglineReducer, newsStoryReducer } = NewsStoriesReducer();
   const { settings, settingsActions } = SettingsReducer();
-  const [hash, changeHash] = useState(window.location.hash.replace(/^#/, ''));
 
   useEffect(() => {
     const title = document.getElementsByTagName('title')[0];
     title.innerText = `News of the Day ${(new Date()).toLocaleDateString()}`;
-    window.onhashchange = () => changeHash(window.location.hash.replace(/^#/, ''));
     getStories(newsStoryActions);
   }, []);
 
@@ -37,31 +37,44 @@ export default function App() {
     return () => document.removeEventListener('click', pageClick);
   }, [tableOfContents, applicationBody]);
 
-  let stories = [];
-  if (!hash) {
-    stories = newsStoryReducer;
-  } else if (parseInt(hash, 10)) {
-    stories = newsStoryReducer.filter((str) => (str.id === hash));
-  } else if (hash) {
-    stories = newsStoryReducer.filter((str) => (str.section === hash || str.subSection === hash));
+  function contentSeparator(stories, storyType, storyId) {
+    switch (storyType) {
+      case 'section':
+        return stories.filter((str) => (storyId === str.hash || storyId === str.subSection));
+      case 'article':
+        return stories.filter((str) => (storyId === str.id));
+      default:
+        return stories;
+    }
   }
+
+  const stories = contentSeparator(newsStoryReducer, section, id);
   const appBodyClass = cn(styles.appBody, { [styles.tableOfContents]: settings.tableofcontents });
 
   return (
-    <BrowserRouter>
-      <div>
-        <HeaderRow actions={settingsActions} settings={settings} />
-        <TableOfContents open={settings.tableofcontents} />
-        <div className={appBodyClass} ref={applicationBody}>
-          <Slogan />
-          { !hash && <RecentStories recentStories={newsTaglineReducer} /> }
-          { stories.length > 1 ? (
-            <HomePageBody stories={stories} />
-          ) : (
+    <>
+      <HeaderRow actions={settingsActions} settings={settings} />
+      <TableOfContents open={settings.tableofcontents} />
+      <div className={appBodyClass} ref={applicationBody}>
+        <Switch>
+          <Route path="/article/:article">
+            <Slogan />
             <MainArticle {...(stories[0])} />
-          )}
-        </div>
+          </Route>
+          <Route path="/section/:section">
+            <Slogan />
+            <RecentStories recentStories={newsTaglineReducer} />
+            <HomePageBody stories={stories} />
+          </Route>
+          <Route path="/">
+            <Slogan />
+            <RecentStories recentStories={newsTaglineReducer} />
+            <HomePageBody stories={stories} />
+          </Route>
+        </Switch>
       </div>
-    </BrowserRouter>
+    </>
   );
 }
+
+App.propTypes = PATHWAY_PROPS;
