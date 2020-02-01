@@ -40,7 +40,7 @@ export default function App({ location: { pathname } }) {
   function contentSeparator(stories, storyType, storyId) {
     switch (storyType) {
       case 'section':
-        return stories.filter((str) => (storyId === str.hash || storyId === str.subSection));
+        return stories.filter((str) => (storyId === str.section || storyId === str.subSection));
       case 'article':
         return stories.filter((str) => (storyId === str.id));
       default:

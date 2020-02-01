@@ -1,26 +1,27 @@
 import React from 'react';
 import cn from 'classnames';
+import styles from './StoryElement.module.scss';
 
 import { STORY_ELEMENT } from '../../types/index';
 
-export default function StoryElement({ type, text, array, className }) { // styles = {} removed.
+export default function StoryElement({ type, text, array, className }) {
   switch (type) {
     case 'title':
-      return (<span className={cn('title-story-element', className)}>{text}</span>);
+      return (<span className={cn(styles.titleStoryElement, className)}>{text}</span>);
     case 'author':
-      return (<span className={cn('author-story-element', className)}>{text}</span>);
+      return (<span className={cn(styles.authorStoryElement, className)}>{text}</span>);
     case 'list': {
       let listIndex = 0;
       return (
-        <ul className={cn('list-story-element', className)}>
-          {array.map((st) => (
-            <li key={listIndex++} className="list-item-story-element">{st}</li>
+        <ul className={cn(styles.listStoryElement, className)}>
+          {array.map((story) => (
+            <li key={listIndex++} className={styles.listItemStoryElement}>{story}</li>
           ))}
         </ul>
       );
     }
     default:
-      return (<span className={cn('title-story-element', className)}>{text}</span>);
+      return (<span className={cn(styles.titleStoryElement, className)}>{text}</span>);
   }
 }
 
