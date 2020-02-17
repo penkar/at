@@ -8,16 +8,14 @@ import App from '../js/Container/App';
 const history = createBrowserHistory();
 
 export default function setUpApplication({ url = '/' }) {
-  // useEffect(() => {
-    if (url) history.push(url);
-  // }, []);
+  if (url) history.push(url);
   return render(
-    <BrowserRouter history={[url]}>
+    <BrowserRouter>
       <Switch>
         <Route path="/" component={App} />
         <Route path="/article/:article" component={App} />
         <Route path="/section/:section" component={App} />
       </Switch>
-    </BrowserRouter>
+    </BrowserRouter>,
   );
 }
