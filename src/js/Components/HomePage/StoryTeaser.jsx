@@ -18,5 +18,5 @@ export default function StoryTeaser({ story = [], className = '', author = [], t
   );
 }
 
-StoryTeaser.propTypes = ARTICLE;z
+StoryTeaser.propTypes = ARTICLE;
 export { StoryTeaser };
