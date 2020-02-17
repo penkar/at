@@ -14,7 +14,7 @@ import SettingsReducer from '../Reducers/settingsReducer';
 import getStories from '../Utility/Api';
 import styles from './App.module.scss';
 
-export default function App({ location: { pathname } }) {
+export default function App({ location: { pathname = '' } = {} }) {
   const [, section, id] = pathname.split('/');
   const applicationBody = createRef();
   const { newsStoryActions, newsTaglineReducer, newsStoryReducer } = NewsStoriesReducer();
@@ -22,7 +22,7 @@ export default function App({ location: { pathname } }) {
 
   useEffect(() => {
     const title = document.getElementsByTagName('title')[0];
-    title.innerText = `News of the Day ${(new Date()).toLocaleDateString()}`;
+    if (title) title.innerText = `News of the Day ${(new Date()).toLocaleDateString()}`;
     getStories(newsStoryActions);
   }, []);
 
