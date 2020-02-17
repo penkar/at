@@ -4,7 +4,7 @@ import styles from './StoryElement.module.scss';
 
 import { STORY_ELEMENT } from '../../types/index';
 
-export default function StoryElement({ type, text, array, className }) {
+export default function StoryElement({ type = '', text = '', array = [], className = '' }) {
   switch (type) {
     case 'title':
       return (<span className={cn(styles.titleStoryElement, className)}>{text}</span>);
@@ -26,9 +26,3 @@ export default function StoryElement({ type, text, array, className }) {
 }
 
 StoryElement.propTypes = STORY_ELEMENT;
-StoryElement.defaultProps = {
-  className: '',
-  type: '',
-  text: '',
-  array: [],
-};

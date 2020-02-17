@@ -6,11 +6,11 @@ import styles from './HeaderButton.module.scss';
 
 export default function HeaderButton({
   clickValue,
-  className,
-  search,
-  onClick,
-  children,
-  title,
+  className = false,
+  search = false,
+  onClick = () => null,
+  children = null,
+  title = '',
 }) {
   const onButtonClick = () => onClick(clickValue);
   const componentClass = cn(styles.newsButton, className, { [styles.search]: search });
@@ -30,9 +30,3 @@ export default function HeaderButton({
 }
 
 HeaderButton.propTypes = HEADER_BUTTON_PROPS;
-HeaderButton.defaultProps = {
-  onClick: () => null,
-  children: null,
-  title: '',
-  search: false,
-};

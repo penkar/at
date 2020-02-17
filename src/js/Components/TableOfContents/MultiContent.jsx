@@ -6,13 +6,13 @@ import cn from 'classnames';
 import { MULTI_CONTENT_PROPS } from '../../types/index';
 import styles from './MultiContent.module.scss';
 
-export default function MultiContent({ primary, secondary, className }) {
+export default function MultiContent({ primary: { label = '', link = '' }, secondary = [], className = '' }) {
   const componentClass = cn(styles.multiContent, styles.contentComponent, className);
 
   return (
     <div className={componentClass}>
-      <Link className={styles.primary} to={`/section/${primary.link}`}>
-        { primary.label }
+      <Link className={styles.primary} to={`/section/${link}`}>
+        { label }
       </Link>
       { secondary.map((item) => (
         <Link className={styles.secondary} to={`/section/${item.link}`} key={item.key}>{item.label}</Link>
@@ -22,12 +22,3 @@ export default function MultiContent({ primary, secondary, className }) {
 }
 
 MultiContent.propTypes = MULTI_CONTENT_PROPS;
-MultiContent.defaultProps = {
-  className: '',
-  primary: {
-    label: '',
-    key: '',
-    link: '',
-  },
-  secondary: [],
-};

@@ -6,11 +6,11 @@ import { HEADER_BUTTON_PROPS } from '../../types';
 import styles from './TransitionHeaderButton.module.scss';
 
 export default function TransitionHeaderButton({
-  changeSearch,
-  clickValue,
-  className,
-  onClick,
-  search,
+  changeSearch = () => null,
+  clickValue = '',
+  className = '',
+  onClick = () => null,
+  search = false,
 }) {
   const onButtonClick = () => onClick(clickValue);
   const componentClass = cn(styles.newsButton, className, { [styles.search]: search });
@@ -31,4 +31,3 @@ export default function TransitionHeaderButton({
 }
 
 TransitionHeaderButton.propTypes = HEADER_BUTTON_PROPS;
-TransitionHeaderButton.defaultProps = {};

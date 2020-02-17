@@ -8,7 +8,7 @@ import Button from '../GenericComponents/Button';
 import { List, MultiLink } from './SectionList';
 import styles from './TableOfContents.module.scss';
 
-export default function TableOfContents({ open }) {
+export default function TableOfContents({ open = false }) {
   const componentClass = cn(styles.tableOfContentsComponent, { [styles.open]: open, [styles.closed]: !open });
 
   return (
@@ -24,7 +24,4 @@ export default function TableOfContents({ open }) {
 
 TableOfContents.propTypes = {
   open: bool,
-};
-TableOfContents.defaultProps = {
-  open: false,
 };

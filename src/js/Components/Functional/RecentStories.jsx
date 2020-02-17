@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { RECENT_STORIES } from '../../types';
 import styles from './RecentStories.module.scss';
 
-export default function RecentStories({ recentStories }) {
+export default function RecentStories({ recentStories = [] }) {
   return (
     <ul className={styles.recentSectional}>
       <li className={styles.label} key="title">In the News&nbsp;</li>
@@ -19,7 +19,4 @@ export default function RecentStories({ recentStories }) {
 
 RecentStories.propTypes = {
   recentStories: RECENT_STORIES,
-};
-RecentStories.defaultProps = {
-  recentStories: [],
 };

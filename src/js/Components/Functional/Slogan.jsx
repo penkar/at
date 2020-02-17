@@ -8,7 +8,7 @@ import styles from './Slogan.module.scss';
 const Months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const date = new Date();
 
-export default function Slogan({ title }) {
+export default function Slogan({ title = 'Not the Washington Post' }) {
   return (
     <div>
       <Link to="/" className={styles.text}>
@@ -32,8 +32,5 @@ export default function Slogan({ title }) {
 }
 
 Slogan.propTypes = {
-  title: string,
-};
-Slogan.defaultProps = {
-  title: 'Not the Washington Post',
+  title: string.isRequired,
 };

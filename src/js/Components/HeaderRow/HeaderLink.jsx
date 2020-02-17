@@ -5,7 +5,7 @@ import cn from 'classnames';
 import { HEADER_LINK } from '../../types';
 import styles from './HeaderLink.module.scss';
 
-export default function HeaderLink({ className, title, children, link }) {
+export default function HeaderLink({ className = '', title = '', children = null, link = '' }) {
   const headerLinkClass = cn(styles.li, className);
 
   return (
@@ -19,9 +19,3 @@ export default function HeaderLink({ className, title, children, link }) {
 }
 
 HeaderLink.propTypes = HEADER_LINK;
-HeaderLink.defaultProps = {
-  className: '',
-  title: '',
-  children: null,
-  link: '',
-};

@@ -5,7 +5,7 @@ import { ARTICLE } from '../../types/index';
 import StoryElement from '../HomePage/StoryElement';
 import styles from './MainArticle.module.scss';
 
-export default function MainArticle({ className, title, author, story }) {
+export default function MainArticle({ className = '', title = '', author = [], story = [] }) {
   const componentClass = cn(styles.teaser, className);
   let subListIndex = 0;
 
@@ -21,15 +21,3 @@ export default function MainArticle({ className, title, author, story }) {
 }
 
 MainArticle.propTypes = ARTICLE;
-MainArticle.defaultProps = {
-  author: [],
-  className: '',
-  date: new Date(),
-  header: '',
-  id: '',
-  story: [],
-  section: '',
-  subheader: '',
-  subSection: '',
-  title: '',
-};

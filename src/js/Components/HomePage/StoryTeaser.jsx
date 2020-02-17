@@ -6,7 +6,7 @@ import StoryElement from './StoryElement';
 import { ARTICLE } from '../../types/index';
 import styles from './StoryTeaser.module.scss';
 
-export default function StoryTeaser({ story, className, author, title, id }) {
+export default function StoryTeaser({ story = [], className = '', author = [], title = '', id = '' }) {
   return (
     <div className={cn(styles.teaser, className)}>
       { title && <Link to={`/article/${id}`} className={styles.title}>{title}</Link> }
@@ -18,12 +18,5 @@ export default function StoryTeaser({ story, className, author, title, id }) {
   );
 }
 
-StoryTeaser.propTypes = ARTICLE;
-StoryTeaser.defaultProps = {
-  className: '',
-  author: [],
-  id: '',
-  story: [],
-};
-
+StoryTeaser.propTypes = ARTICLE;z
 export { StoryTeaser };
