@@ -8,7 +8,7 @@ import styles from './StoryTeaser.module.scss';
 
 export default function StoryTeaser({ story = [], className = '', author = [], title = '', id = '' }) {
   return (
-    <div className={cn(styles.teaser, className)}>
+    <div className={cn(styles.teaser, className)} data-iden="teaser-article">
       { title && <Link to={`/article/${id}`} className={styles.title}>{title}</Link> }
       { author && <div className={styles.author}>{author.join(', ')}</div> }
       { story[0] && <StoryElement {...story[0]} /> }

@@ -10,7 +10,7 @@ export default function MainArticle({ className = '', title = '', author = [], s
   let subListIndex = 0;
 
   return (
-    <div className={styles.body}>
+    <div className={styles.body} data-iden="main-article">
       <div className={componentClass}>
         { title && <div className={styles.title}>{ title }</div> }
         { author && <div className={styles.author}>{ author.join(', ') }</div> }
