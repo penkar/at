@@ -1,13 +1,10 @@
-import Sample from './Sample';
-
 const getStories = (actions) => {
-  actions.setStoryTags(Sample);
-  actions.setStoryAction(Sample);
-  // fetch(``)
-  //   .then(res=>res.json())
-  //   .then(response=> {
-  //     console.log(resonse);
-  //   })
+  fetch(window.location.pathname)
+    .then((response) => response.json())
+    .then((response) => {
+      actions.setStoryTags(response);
+      actions.setStoryAction(response);
+    });
 };
 
 export default getStories;

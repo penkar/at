@@ -5,8 +5,11 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './index.css';
 import App from './js/Container/App';
+import mirageServer from './miragejs/index';
 
 import * as serviceWorker from './serviceWorker';
+
+mirageServer();
 
 ReactDOM.render((
   <BrowserRouter>

@@ -24,7 +24,7 @@ export default function App({ location: { pathname = '' } = {} }) {
     const title = document.getElementsByTagName('title')[0];
     if (title) title.innerText = `News of the Day ${(new Date()).toLocaleDateString()}`;
     getStories(newsStoryActions);
-  }, []);
+  }, [window.location.pathname]);
 
   const tableOfContents = settings.tableofcontents;
   useLayoutEffect(() => {
