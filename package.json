@@ -10,6 +10,7 @@
     "babel-eslint": "^10.0.3",
     "classnames": "^2.2.6",
     "history": "^4.10.1",
+    "miragejs": "^0.1.35",
     "node-sass": "^4.13.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
