@@ -1,5 +1,5 @@
 const getStories = (actions) => {
-  fetch(window.location.pathname)
+  fetch(`/api${window.location.pathname}`)
     .then((response) => response.json())
     .then((response) => {
       actions.setStoryTags(response);

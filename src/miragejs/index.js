@@ -4,6 +4,8 @@ import Sample from './Sample';
 export default function mirageServer() {
   return new Server({
     routes() {
+      this.namespace = '/api';
+
       this.get('/', () => (Sample));
 
       this.get('/section/:id', (_schema, request) => {
