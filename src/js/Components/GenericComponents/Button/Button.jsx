@@ -7,7 +7,7 @@ import { BUTTON_PROPS } from '../../../types';
 import styles from './Button.module.scss';
 
 export default function Button({ action, full, label, title, type }) {
-  const buttonClass = cn('asdf', styles.genericButtonComponent, {
+  const buttonClass = cn(styles.genericButtonComponent, {
     [styles.full]: full,
     [styles.primary]: type === 'primary',
   });

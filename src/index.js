@@ -5,12 +5,13 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './index.css';
 import App from './js/Container/App';
-import mirageServer from './miragejs/index';
+import makeServer from './miragejs/index';
 
 import * as serviceWorker from './serviceWorker';
 
-mirageServer();
-
+if (process.env.NODE_ENV === 'development') {
+  makeServer();
+}
 ReactDOM.render((
   <BrowserRouter>
     <Switch>
