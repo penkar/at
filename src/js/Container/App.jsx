@@ -19,12 +19,13 @@ export default function App({ location: { pathname = '' } = {} }) {
   const applicationBody = createRef();
   const { newsStoryActions, newsTaglineReducer, newsStoryReducer } = NewsStoriesReducer();
   const { settings, settingsActions } = SettingsReducer();
+  const path = window.location.pathname;
 
   useEffect(() => {
     const title = document.getElementsByTagName('title')[0];
     if (title) title.innerText = `News of the Day ${(new Date()).toLocaleDateString()}`;
     getStories(newsStoryActions);
-  }, [window.location.pathname]);
+  }, [path]);
 
   const tableOfContents = settings.tableofcontents;
   useLayoutEffect(() => {
