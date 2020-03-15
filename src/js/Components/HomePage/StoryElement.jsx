@@ -7,9 +7,13 @@ import { STORY_ELEMENT } from '../../types/index';
 export default function StoryElement({ type = '', text = '', array = [], className = '' }) {
   switch (type) {
     case 'title':
-      return (<span className={cn(styles.titleStoryElement, className)}>{text}</span>);
-    case 'author':
-      return (<span className={cn(styles.authorStoryElement, className)}>{text}</span>);
+    case 'author': {
+      const classNames = cn(className, {
+        [styles.titleStoryElement]: type === 'title',
+        [styles.authorStoryElement]: type === 'author',
+      });
+      return <span className={classNames}>{text}</span>;
+    }
     case 'list': {
       let listIndex = 0;
       return (
